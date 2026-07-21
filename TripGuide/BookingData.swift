@@ -70,8 +70,20 @@ enum BookingData {
             ),
         ],
 
-        // День 5 — Котсуолдс · паб Кларксона
+        // День 5 — Котсуолдс · паб Кларксона · Берфорд
         5: [
+            BookingItem(
+                name: "Аренда автомобиля, 9–10.09", kind: .transport,
+                note: "Compact или Mid-size, 2 дня. Забрать утром 9.09 в центре Лондона, вернуть вечером 10.09. Бронируйте заранее — в сезон машин мало.",
+                officialURLString: "https://www.rentalcars.com", officialLabel: "Забронировать",
+                mapsQuery: "Car hire London city centre"
+            ),
+            BookingItem(
+                name: "The Royal Oak, Берфорд ★★★", kind: .hotel,
+                note: "£120–180/ночь · исторический паб-отель на High Street, 1 ночь (09.09)",
+                mapsQuery: "The Royal Oak Hotel Burford",
+                bookingComQuery: "The Royal Oak Hotel Burford Oxfordshire"
+            ),
             BookingItem(
                 name: "The Farmer's Dog, Astall", kind: .restaurant,
                 note: "Паб Джереми Кларксона — бронь стола обязательна, закрыт вс/пн.",

@@ -111,21 +111,21 @@ enum TripData {
         ),
 
         TripDay(
-            id: 5, day: 9, weekday: "Ср", city: .london, subtitle: "Котсуолдс · паб Кларксона",
+            id: 5, day: 9, weekday: "Ср", city: .london, subtitle: "Котсуолдс · паб Кларксона · Берфорд",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Поездка в Оксфордшир (~1,5 ч в одну сторону) — обязательно бронируйте столик заранее, паб закрыт по вс/пн. По пути стоит заглянуть в один из городков Котсуолдса (Burford или Bourton-on-the-Water)."),
+                PlanBlock(icon: "car.fill", label: "День", text: "Поездка на арендованной машине в Оксфордшир (~1,5 ч). По пути — Bourton-on-the-Water с живописными мостами через реку Уиндраш. Бронь в пабе обязательна, закрыт вс/пн."),
                 PlanBlock(icon: "fork.knife", label: "Обед", text: "The Farmer's Dog — паб Джереми Кларксона в Astall. Стейк-пай и раклет-крамбл — фирменные блюда."),
-                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Возврат в Лондон."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
-                PlanBlock(icon: "map.fill", label: "Маршрут", text: "Лондон → Котсуолдс (117 км / ~1 ч 45 мин), единственный день без машины, требующий отдельного трансфера."),
+                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Берфорд — один из красивейших городков Котсуолдса: медово-жёлтые известняковые фасады на High Street, антикварные лавки, мост через реку Уиндраш."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "The Royal Oak, Берфорд"),
+                PlanBlock(icon: "map.fill", label: "Маршрут", text: "Лондон → Котсуолдс → Берфорд, ~117 км / 1 ч 45 мин на арендованной машине."),
             ],
             pois: [
-                // Отель — стартовая точка дня: от него на карте строится маршрут до паба.
+                // Отель — стартовая точка дня: от него строится маршрут до паба и далее в Берфорд.
                 POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
-                POI(name: "Burford", category: .sight, latitude: 51.8110, longitude: -1.6360),
-                POI(name: "The Farmer's Dog, Astall", category: .food, latitude: 51.8020, longitude: -1.6230),
                 POI(name: "Bourton-on-the-Water", category: .sight, latitude: 51.8767, longitude: -1.7530),
+                POI(name: "The Farmer's Dog, Astall", category: .food, latitude: 51.8020, longitude: -1.6230),
+                POI(name: "The Royal Oak, Берфорд", category: .hotel, latitude: 51.8118, longitude: -1.6356),
             ],
             warning: nil,
             fact: "Котсуолдс застроен характерным медово-жёлтым известняком, который называют «котсуолдским камнем» — при закате он приобретает золотистый оттенок, из-за чего регион иногда называют «краем мёда и масла».",
@@ -137,14 +137,15 @@ enum TripData {
             id: 6, day: 10, weekday: "Чт", city: .london, subtitle: "Британский музей · Сохо",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Британский музей (вход бесплатный, закладывайте 2–3 часа)."),
+                PlanBlock(icon: "car.fill", label: "Утро", text: "Завтрак в The Royal Oak, прогулка по старому Берфорду — исторический High Street. Выезд обратно в Лондон (~117 км / 1 ч 45 мин), сдача арендованной машины."),
+                PlanBlock(icon: "sunrise.fill", label: "День", text: "Британский музей (вход бесплатный, закладывайте 2–3 часа)."),
                 PlanBlock(icon: "fork.knife", label: "Обед", text: "Covent Garden, любое кафе рядом с отелем."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Прогулка по Сохо, флагман Stone Island на 79 Brewer St."),
+                PlanBlock(icon: "sun.max.fill", label: "Вечер", text: "Прогулка по Сохо, флагман Stone Island на 79 Brewer St."),
                 PlanBlock(icon: "fork.knife", label: "Ужин", text: "Blacklock Soho (стейк-хаус) или Scarlett Green."),
                 PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
             ],
             pois: [
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
+                POI(name: "The Royal Oak, Берфорд", category: .hotel, latitude: 51.8118, longitude: -1.6356),
                 POI(name: "Британский музей", category: .sight, latitude: 51.5194, longitude: -0.1270),
                 POI(name: "Сохо", category: .sight, latitude: 51.5136, longitude: -0.1367),
                 POI(name: "Stone Island, 79 Brewer St", category: .activity, latitude: 51.5129, longitude: -0.1365),
