@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		27F807CB300E9E32001BE78A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BAD4D7300AA4A000B58520 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BAD4DE300AA4A000B58520;
+			remoteInfo = TripGuide;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		27BAD4DF300AA4A000B58520 /* TripGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27F807C7300E9E32001BE78A /* TripGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = TripGuide;
 			sourceTree = "<group>";
 		};
+		27F807C8300E9E32001BE78A /* TripGuideTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TripGuideTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		27BAD4DC300AA4A000B58520 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F807C4300E9E32001BE78A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				27BAD4E1300AA4A000B58520 /* TripGuide */,
+				27F807C8300E9E32001BE78A /* TripGuideTests */,
 				27BAD4E0300AA4A000B58520 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				27BAD4DF300AA4A000B58520 /* TripGuide.app */,
+				27F807C7300E9E32001BE78A /* TripGuideTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = 27BAD4DF300AA4A000B58520 /* TripGuide.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27F807C6300E9E32001BE78A /* TripGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27F807CF300E9E32001BE78A /* Build configuration list for PBXNativeTarget "TripGuideTests" */;
+			buildPhases = (
+				27F807C3300E9E32001BE78A /* Sources */,
+				27F807C4300E9E32001BE78A /* Frameworks */,
+				27F807C5300E9E32001BE78A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27F807CC300E9E32001BE78A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				27F807C8300E9E32001BE78A /* TripGuideTests */,
+			);
+			name = TripGuideTests;
+			packageProductDependencies = (
+			);
+			productName = TripGuideTests;
+			productReference = 27F807C7300E9E32001BE78A /* TripGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					27BAD4DE300AA4A000B58520 = {
 						CreatedOnToolsVersion = 26.6;
+					};
+					27F807C6300E9E32001BE78A = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 27BAD4DE300AA4A000B58520;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				27BAD4DE300AA4A000B58520 /* TripGuide */,
+				27F807C6300E9E32001BE78A /* TripGuideTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		27BAD4DD300AA4A000B58520 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27F807C5300E9E32001BE78A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27F807C3300E9E32001BE78A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27F807CC300E9E32001BE78A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BAD4DE300AA4A000B58520 /* TripGuide */;
+			targetProxy = 27F807CB300E9E32001BE78A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		27BAD4E8300AA4A200B58520 /* Debug */ = {
@@ -261,6 +336,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,6 +369,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +384,48 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		27F807CD300E9E32001BE78A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3253F3AX7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hashier.TripGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TripGuide";
+			};
+			name = Debug;
+		};
+		27F807CE300E9E32001BE78A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3253F3AX7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hashier.TripGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TripGuide";
 			};
 			name = Release;
 		};
@@ -327,6 +446,15 @@
 			buildConfigurations = (
 				27BAD4EB300AA4A200B58520 /* Debug */,
 				27BAD4EC300AA4A200B58520 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27F807CF300E9E32001BE78A /* Build configuration list for PBXNativeTarget "TripGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27F807CD300E9E32001BE78A /* Debug */,
+				27F807CE300E9E32001BE78A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
