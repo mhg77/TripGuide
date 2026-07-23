@@ -1,6 +1,6 @@
 # TripGuide — London → Lyon 🗺️
 
-A SwiftUI travel guide app for two: 23 days along the route London → Brussels → Bruges → Beaune → Annecy → Arcs 1950 → Val d'Isère → Lyon, September 2026.
+A SwiftUI travel guide app: 23 days along the route London → Brussels → Bruges → Beaune → Annecy → Arcs 1950 → Val d'Isère → Lyon, September 2026.
 
 ## Screenshots
 
