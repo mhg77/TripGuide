@@ -1,84 +1,84 @@
-# TripGuide — Лондон → Лион 🗺️
+# TripGuide — London → Lyon 🗺️
 
-SwiftUI-приложение-путеводитель для двоих: 23 дня по маршруту Лондон → Брюссель → Брюгге → Бон → Анси → Аркур → Валь-д'Изер → Лион, сентябрь 2026.
+A SwiftUI travel guide app for two: 23 days along the route London → Brussels → Bruges → Beaune → Annecy → Arcs 1950 → Val d'Isère → Lyon, September 2026.
 
-## Скриншоты
+## Screenshots
 
 | | | |
 |---|---|---|
-| ![Календарь](docs/screenshots/01_calendar.png) | ![Маршруты](docs/screenshots/02_routes.png) | ![Переезд](docs/screenshots/03_route_detail.png) |
-| Главный экран — 23 дня | Вкладка «Маршруты» | Детальная карта переезда |
-| ![План дня](docs/screenshots/04_day_plan.png) | ![Карта дня](docs/screenshots/05_day_map.png) | ![Брони](docs/screenshots/06_bookings.png) |
-| План дня с точками | Карта точек дня | Брони и билеты |
+| ![Calendar](docs/screenshots/01_calendar.png) | ![Routes](docs/screenshots/02_routes.png) | ![Route detail](docs/screenshots/03_route_detail.png) |
+| Main screen — 23 days | Routes tab | Transfer detail map |
+| ![Day plan](docs/screenshots/04_day_plan.png) | ![Day map](docs/screenshots/05_day_map.png) | ![Bookings](docs/screenshots/06_bookings.png) |
+| Day plan with stops | Day map with POIs | Bookings & tickets |
 
-## Возможности
+## Features
 
-- **Календарь на 23 дня** — тап по дню открывает план, карту и брони
-- **Карта внутри дня** — маршруты между точками по реальным дорогам (офлайн, геометрия встроена в приложение)
-- **99 офлайн-маршрутов** — пешие, автомобильные, Евростар через Ла-Манш
-- **Вкладка «Маршруты»** — все переезды с картой и кнопкой «Открыть в Google Maps»
-- **Вкладка «Справка»** — документы, деньги, погода, бюджет, план Б
-- **Брони и билеты** — все отели, транспорт и экскурсии с датами
-- **Свайп между днями** — влево/вправо, без возврата в календарь
-- **Пасхалки** — тройной тап на экране дня запускает анимацию, уникальную для каждого из 23 дней
-- **iPad-адаптация** — удобная ширина колонки, увеличенная карта
+- **23-day calendar** — tap any day to open its plan, map, and bookings
+- **In-day map** — routes between stops along real roads (offline, geometry bundled in the app)
+- **99 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
+- **Routes tab** — all transfers with map and "Open in Google Maps" button
+- **Info tab** — documents, money, weather, budget, and backup plans
+- **Bookings & tickets** — all hotels, transport, and attractions with dates
+- **Swipe between days** — left/right without going back to the calendar
+- **Easter eggs** — triple-tap on a day's plan screen triggers a unique animation for each of the 23 days
+- **iPad support** — comfortable column width, larger map
 
-## Стек
+## Tech Stack
 
 | | |
 |---|---|
 | UI | SwiftUI (iOS 17+) |
-| Карты | MapKit, `MKDirections` |
-| Офлайн-маршруты | OSRM (дороги), Transitous / GTFS (Евростар) |
-| Геометрия | Google Encoded Polyline (99 маршрутов в `BundledRoutes.swift`) |
-| Тесты | Swift Testing framework (17 тестов) |
-| Язык | Swift 6 |
+| Maps | MapKit, `MKDirections` |
+| Offline routes | OSRM (roads), Transitous / GTFS (Eurostar) |
+| Geometry | Google Encoded Polyline (99 routes in `BundledRoutes.swift`) |
+| Tests | Swift Testing framework (17 tests) |
+| Language | Swift 6 |
 
-## Структура проекта
+## Project Structure
 
 ```
 TripGuide/
-├── TripGuideApp.swift       # Точка входа
-├── RootView.swift           # Нижний таб-бар
-├── Theme.swift              # Цвета, шрифты, вспомогательные модификаторы
-├── Models.swift             # Модели данных дней и точек
-├── TripData.swift           # Все 23 дня: точки, описания, координаты
-├── CalendarView.swift       # Главный экран-календарь
-├── DayDetailView.swift      # Экран дня (план / карта / брони)
-├── DayPlanView.swift        # Список точек дня с пасхалкой
-├── MapTabView.swift         # Карта точек дня с маршрутом
+├── TripGuideApp.swift       # App entry point
+├── RootView.swift           # Bottom tab bar
+├── Theme.swift              # Colors, fonts, and helper modifiers
+├── Models.swift             # Day and POI data models
+├── TripData.swift           # All 23 days: stops, descriptions, coordinates
+├── CalendarView.swift       # Main calendar screen
+├── DayDetailView.swift      # Day screen (plan / map / bookings)
+├── DayPlanView.swift        # Day stop list with easter egg
+├── MapTabView.swift         # Day map with route polyline
 ├── MapGeometry.swift        # Shared helper: camera fit, region
-├── RouteModels.swift        # Модели переездов и промежуточных точек
-├── RouteData.swift          # Все 9 переездов с waypoints
-├── RoutesView.swift         # Список переездов
-├── RouteDetailView.swift    # Детальная карта переезда
-├── TransitRouting.swift     # Клиент Transitous API
-├── BundledRoutes.swift      # 94 офлайн-маршрута (авто-генерация)
-├── BookingModels.swift      # Модели броней
-├── BookingData.swift        # Данные броней и билетов
-├── BookingsTabView.swift    # Экран броней
-├── InfoView.swift           # Справочный раздел
-├── NightCityScene.swift     # Анимированный ночной фон по городам
-├── EasterEggScene.swift     # Пасхалки по дням
-├── Haptics.swift            # Тактильная обратная связь
-└── Assets.xcassets/         # Иконка, цвета, фото городов
+├── RouteModels.swift        # Transfer and waypoint models
+├── RouteData.swift          # All 9 transfers with waypoints
+├── RoutesView.swift         # Transfer list
+├── RouteDetailView.swift    # Transfer detail map
+├── TransitRouting.swift     # Transitous API client
+├── BundledRoutes.swift      # 99 offline routes (auto-generated)
+├── BookingModels.swift      # Booking data models
+├── BookingData.swift        # Bookings and ticket data
+├── BookingsTabView.swift    # Bookings screen
+├── InfoView.swift           # Reference section
+├── NightCityScene.swift     # Animated night city background per city
+├── EasterEggScene.swift     # Per-day easter eggs
+├── Haptics.swift            # Haptic feedback
+└── Assets.xcassets/         # App icon, colors, city photos
 ```
 
-## Офлайн-маршруты
+## Offline Routes
 
-Все 99 маршрутов предзагружены и встроены в `BundledRoutes.swift` — приложение показывает реальную геометрию дорог без сети. Для обновления маршрутов:
+All 99 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
 
 ```bash
 cd scripts
 python3 fetch_routes.py
 ```
 
-Скрипт запрашивает OSRM (автомобильные и пешие маршруты) и Transitous (Евростар через Ла-Манш) и перезаписывает `BundledRoutes.swift`.
+The script queries OSRM (driving and walking routes) and Transitous (Eurostar rail geometry) and overwrites `BundledRoutes.swift`.
 
-## Тесты
+## Tests
 
 ```bash
-# В Xcode: Product → Test (⌘U)
+# In Xcode: Product → Test (⌘U)
 ```
 
-17 тестов: корректность данных всех 23 дней, наличие офлайн-геометрии для всех 99 маршрутов, точность координат.
+17 tests covering data integrity for all 23 days, offline geometry presence for all 99 routes, and coordinate accuracy.
