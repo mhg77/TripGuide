@@ -58,6 +58,11 @@ enum BookingData {
                 officialURLString: "https://www.rmg.co.uk/plan-your-visit/tickets-prices", officialLabel: "Купить билет",
                 mapsQuery: "Royal Observatory Greenwich"
             ),
+            BookingItem(
+                name: "The Grapes, Лаймхаус", kind: .restaurant,
+                note: "Паб Иэна Маккеллена на набережной Темзы — столы не бронируют, приходите заранее. По понедельникам с 20:00 паб-квиз.",
+                mapsQuery: "The Grapes Limehouse London"
+            ),
         ],
 
         // День 4 — Harry Potter Studio Tour

@@ -73,6 +73,7 @@ enum TripData {
                 PlanBlock(icon: "sun.max.fill", label: "День", text: "Кораблик по Темзе от Тауэра до Гринвича, Cutty Sark, Королевская обсерватория (нулевой меридиан)."),
                 PlanBlock(icon: "ticket.fill", label: "Билеты", text: "Кораблик Тауэр→Гринвич — €28–40 за двоих, фаст-трека нет, но с онлайн-билетом посадка почти сразу (без брони у кассы можно потерять 20–30 минут). Королевская обсерватория (линия Гринвичского меридиана + экспозиция) — €46–52 за двоих по тайм-слоту, очередей практически нет."),
                 PlanBlock(icon: "fork.knife", label: "Ужин", text: "Bill's Greenwich или Hawksmoor Wood Wharf."),
+                PlanBlock(icon: "wineglass.fill", label: "Вечер", text: "На обратном пути (DLR до Westferry/Limehouse) — The Grapes, крошечный паб на набережной Темзы, стоит здесь с 1583 года. Совладелец — Иэн Маккеллен, живёт на этой же улице; по понедельникам с 20:00 тут знаменитый паб-квиз, который он иногда ведёт сам. Столы не бронируют — приходите заранее."),
                 PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
             ],
             pois: [
@@ -82,6 +83,7 @@ enum TripData {
                 POI(name: "Borough Market", category: .food, latitude: 51.5055, longitude: -0.0910),
                 POI(name: "Cutty Sark", category: .sight, latitude: 51.4826, longitude: -0.0077),
                 POI(name: "Королевская обсерватория, Гринвич", category: .sight, latitude: 51.4769, longitude: -0.0005),
+                POI(name: "The Grapes, Лаймхаус", category: .food, latitude: 51.5092, longitude: -0.0370),
             ],
             warning: nil,
             fact: "Гринвичская обсерватория стоит точно на нулевом меридиане — можно встать одной ногой в Западном, а другой в Восточном полушарии. Именно отсюда отсчитывается всемирное время (GMT).",

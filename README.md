@@ -15,7 +15,7 @@ A SwiftUI travel guide app: 23 days along the route London → Brussels → Brug
 
 - **23-day calendar** — tap any day to open its plan, map, and bookings
 - **In-day map** — routes between stops along real roads (offline, geometry bundled in the app)
-- **99 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
+- **100 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
 - **Routes tab** — all transfers with map and "Open in Google Maps" button
 - **Info tab** — documents, money, weather, budget, and backup plans
 - **Bookings & tickets** — all hotels, transport, and attractions with dates
@@ -30,7 +30,7 @@ A SwiftUI travel guide app: 23 days along the route London → Brussels → Brug
 | UI | SwiftUI (iOS 17+) |
 | Maps | MapKit, `MKDirections` |
 | Offline routes | OSRM (roads), Transitous / GTFS (Eurostar) |
-| Geometry | Google Encoded Polyline (99 routes in `BundledRoutes.swift`) |
+| Geometry | Google Encoded Polyline (100 routes in `BundledRoutes.swift`) |
 | Tests | Swift Testing framework (17 tests) |
 | Language | Swift 6 |
 
@@ -53,7 +53,7 @@ TripGuide/
 ├── RoutesView.swift         # Transfer list
 ├── RouteDetailView.swift    # Transfer detail map
 ├── TransitRouting.swift     # Transitous API client
-├── BundledRoutes.swift      # 99 offline routes (auto-generated)
+├── BundledRoutes.swift      # 100 offline routes (auto-generated)
 ├── BookingModels.swift      # Booking data models
 ├── BookingData.swift        # Bookings and ticket data
 ├── BookingsTabView.swift    # Bookings screen
@@ -66,7 +66,7 @@ TripGuide/
 
 ## Offline Routes
 
-All 99 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
+All 100 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
 
 ```bash
 cd scripts
@@ -81,4 +81,4 @@ The script queries OSRM (driving and walking routes) and Transitous (Eurostar ra
 # In Xcode: Product → Test (⌘U)
 ```
 
-17 tests covering data integrity for all 23 days, offline geometry presence for all 99 routes, and coordinate accuracy.
+17 tests covering data integrity for all 23 days, offline geometry presence for all 100 routes, and coordinate accuracy.
