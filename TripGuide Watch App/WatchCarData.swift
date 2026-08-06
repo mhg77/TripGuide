@@ -1,0 +1,66 @@
+import Foundation
+import CoreLocation
+import MapKit
+
+/// Один авто-переезд поездки (для второго экрана «Авто»).
+struct WatchCarLeg: Identifiable {
+    let id: Int
+    let dateLabel: String
+    let title: String
+    let isTrain: Bool
+    let distance: String
+    let duration: String
+    let from: CLLocationCoordinate2D
+    let to: CLLocationCoordinate2D
+
+    /// Офлайн-геометрия переезда из общего BundledRoutes (ключ "t<id>").
+    var coordinates: [CLLocationCoordinate2D] {
+        guard let entry = BundledRoutes.entry(transfer: id) else { return [from, to] }
+        return WatchPolyline.decode(entry.polyline, precision: entry.precision)
+    }
+
+    var navLeg: WatchNavLeg {
+        WatchNavLeg(
+            id: "t\(id)",
+            title: title,
+            from: from,
+            to: to,
+            transport: isTrain ? .transit : .automobile,
+            fallback: coordinates
+        )
+    }
+}
+
+/// 9 переездов маршрута — метаданные зеркалят RouteData основного приложения,
+/// а геометрия берётся из общего BundledRoutes, поэтому линии не расходятся.
+enum WatchCarData {
+    static let legs: [WatchCarLeg] = [
+        WatchCarLeg(id: 1, dateLabel: "13.09", title: "Лондон → Париж", isTrain: true,
+                    distance: "Евростар", duration: "~2 ч 15 мин",
+                    from: .init(latitude: 51.5308, longitude: -0.1238), to: .init(latitude: 48.8809, longitude: 2.3553)),
+        WatchCarLeg(id: 2, dateLabel: "17.09", title: "Диснейленд → Брюгге", isTrain: false,
+                    distance: "~307 км", duration: "3 ч 30 мин",
+                    from: .init(latitude: 48.8703, longitude: 2.7766), to: .init(latitude: 51.2085, longitude: 3.2247)),
+        WatchCarLeg(id: 3, dateLabel: "18.09", title: "Брюгге → Бон", isTrain: false,
+                    distance: "~614 км", duration: "6 ч 20 мин",
+                    from: .init(latitude: 51.2085, longitude: 3.2247), to: .init(latitude: 47.0235, longitude: 4.8358)),
+        WatchCarLeg(id: 4, dateLabel: "19.09", title: "Бон → Анси", isTrain: false,
+                    distance: "~233 км", duration: "2 ч 45 мин",
+                    from: .init(latitude: 47.0235, longitude: 4.8358), to: .init(latitude: 45.8992, longitude: 6.1294)),
+        WatchCarLeg(id: 5, dateLabel: "20.09", title: "Анси → Шамони", isTrain: false,
+                    distance: "~99 км", duration: "1 ч 20 мин",
+                    from: .init(latitude: 45.8992, longitude: 6.1294), to: .init(latitude: 45.9237, longitude: 6.8694)),
+        WatchCarLeg(id: 6, dateLabel: "22.09", title: "Шамони → Ле-Зарк 1950", isTrain: false,
+                    distance: "~120 км", duration: "2 ч",
+                    from: .init(latitude: 45.9237, longitude: 6.8694), to: .init(latitude: 45.5720, longitude: 6.7930)),
+        WatchCarLeg(id: 7, dateLabel: "24.09", title: "Ле-Зарк ⇄ Серравалле", isTrain: false,
+                    distance: "~302 км", duration: "4 ч 20 мин",
+                    from: .init(latitude: 45.5720, longitude: 6.7930), to: .init(latitude: 44.7647, longitude: 8.8560)),
+        WatchCarLeg(id: 8, dateLabel: "25.09", title: "Ле-Зарк → Пре-Сен-Дидье", isTrain: false,
+                    distance: "~57 км", duration: "1 ч 30 мин",
+                    from: .init(latitude: 45.5720, longitude: 6.7930), to: .init(latitude: 45.7186, longitude: 6.9662)),
+        WatchCarLeg(id: 9, dateLabel: "27.09", title: "Пре-Сен-Дидье → Лион", isTrain: false,
+                    distance: "~254 км", duration: "3 ч 10 мин",
+                    from: .init(latitude: 45.7186, longitude: 6.9662), to: .init(latitude: 45.7627, longitude: 4.8272)),
+    ]
+}

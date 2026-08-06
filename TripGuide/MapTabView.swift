@@ -17,6 +17,8 @@ struct MapTabView: View {
     @State private var routeIsTransit = false
     /// Точка отправления текущего маршрута — POI, стоящая в плане дня перед выбранной.
     @State private var currentOrigin: POI?
+    /// Геопозиция пользователя — синяя точка на карте и кнопка «где я».
+    @State private var location = LocationProvider()
     @Environment(\.openURL) private var openURL
 
     init(day: TripDay) {
@@ -68,9 +70,15 @@ struct MapTabView: View {
                         .buttonStyle(.plain)
                     }
                 }
+
+                UserAnnotation()
             }
             .mapStyle(.standard)
             .ignoresSafeArea(edges: .bottom)
+            .overlay(alignment: .topTrailing) {
+                locateButton
+                    .padding(10)
+            }
 
             if let routeInfo {
                 routeBar(routeInfo)
@@ -88,6 +96,31 @@ struct MapTabView: View {
             }
         }
         .task(id: selectedPOI) { await updateRoute() }
+        .onAppear { location.start() }
+        .onDisappear { location.stop() }
+    }
+
+    /// Кнопка «где я»: центрирует карту на текущей геопозиции.
+    private var locateButton: some View {
+        Button {
+            guard let coordinate = location.coordinate else { return }
+            Haptics.tap()
+            withAnimation(.easeInOut(duration: 0.4)) {
+                cameraPosition = .region(MKCoordinateRegion(
+                    center: coordinate,
+                    latitudinalMeters: 1200, longitudinalMeters: 1200
+                ))
+            }
+        } label: {
+            Image(systemName: "location.fill")
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(location.coordinate == nil ? Theme.inkSecondary : Theme.info)
+                .frame(width: 38, height: 38)
+                .background(.thinMaterial, in: Circle())
+                .overlay(Circle().stroke(Theme.gold.opacity(0.35), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+        .disabled(location.coordinate == nil)
     }
 
     /// Строит маршрут от предыдущей точки плана к выбранной: мгновенно показывает

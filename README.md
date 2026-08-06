@@ -21,7 +21,9 @@ A SwiftUI travel guide app: 23 days along the route London → Brussels → Brug
 - **Bookings & tickets** — all hotels, transport, and attractions with dates
 - **Swipe between days** — left/right without going back to the calendar
 - **Easter eggs** — triple-tap on a day's plan screen triggers a unique animation for each of the 23 days
+- **User location on maps** — live blue dot and a "locate me" button on the day and transfer maps
 - **iPad support** — comfortable column width, larger map
+- **Apple Watch app** — two screens (walking / driving routes) with turn-by-turn navigation: live location, voice + haptic maneuver prompts, and a full-screen map with a "locate me" button. Runs standalone and installs from the paired iPhone.
 
 ## Tech Stack
 
@@ -29,6 +31,8 @@ A SwiftUI travel guide app: 23 days along the route London → Brussels → Brug
 |---|---|
 | UI | SwiftUI (iOS 17+) |
 | Maps | MapKit, `MKDirections` |
+| Watch | watchOS companion — MapKit, `MKDirections`, `AVSpeechSynthesizer`, haptics |
+| Location | CoreLocation — live user location, background updates on the watch |
 | Offline routes | OSRM (roads), Transitous / GTFS (Eurostar) |
 | Geometry | Google Encoded Polyline (100 routes in `BundledRoutes.swift`) |
 | Tests | Swift Testing framework (17 tests) |
@@ -61,8 +65,26 @@ TripGuide/
 ├── NightCityScene.swift     # Animated night city background per city
 ├── EasterEggScene.swift     # Per-day easter eggs
 ├── Haptics.swift            # Haptic feedback
+├── LocationProvider.swift   # User location for the maps ("locate me")
 └── Assets.xcassets/         # App icon, colors, city photos
+
+TripGuide Watch App/         # watchOS companion (navigation)
+├── TripGuideWatchApp.swift  # Watch app entry
+├── WatchRootView.swift      # Two tabs: walking / driving routes
+├── WatchDayListView.swift   # Days that have walking segments
+├── WatchWalkListView.swift  # Walking segments of a day
+├── WatchCarListView.swift   # The 9 transfers (driving / Eurostar)
+├── WatchNavigationView.swift# Route screen: map preview, banner prompts, start/stop
+├── WatchFullMapView.swift   # Full-screen map with "locate me" / "fit route"
+├── WatchNavigator.swift     # Location + MKDirections turn-by-turn engine
+├── WatchWalkData.swift      # Walking segments from shared TripData/BundledRoutes
+├── WatchCarData.swift       # The 9 transfers (shared geometry)
+├── WatchNavLeg.swift        # Unified leg model for the nav screen
+├── WatchPolyline.swift      # Google polyline decoder
+└── WatchFormat.swift        # Distance formatting
 ```
+
+`Models.swift`, `TripData.swift` and `BundledRoutes.swift` are shared between the iOS app and the watch app (single source of truth — no divergence).
 
 ## Offline Routes
 

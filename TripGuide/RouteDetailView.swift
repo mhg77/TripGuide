@@ -10,6 +10,8 @@ struct RouteDetailView: View {
     @State private var roadPolyline: MKPolyline?
     /// Сегменты маршрута Евростара из Transitous — с геометрией и видом транспорта.
     @State private var transitLegs: [TransitLeg] = []
+    /// Геопозиция пользователя — синяя точка на карте и кнопка «где я».
+    @State private var location = LocationProvider()
     @Environment(\.openURL) private var openURL
     @Environment(\.horizontalSizeClass) private var sizeClass
 
@@ -73,6 +75,31 @@ struct RouteDetailView: View {
         .navigationTitle(route.title)
         .navigationBarTitleDisplayMode(.inline)
         .task { await loadRoadRoute() }
+        .onAppear { location.start() }
+        .onDisappear { location.stop() }
+    }
+
+    /// Кнопка «где я»: центрирует карту на текущей геопозиции.
+    private var locateButton: some View {
+        Button {
+            guard let coordinate = location.coordinate else { return }
+            Haptics.tap()
+            withAnimation(.easeInOut(duration: 0.4)) {
+                cameraPosition = .region(MKCoordinateRegion(
+                    center: coordinate,
+                    latitudinalMeters: 1200, longitudinalMeters: 1200
+                ))
+            }
+        } label: {
+            Image(systemName: "location.fill")
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(location.coordinate == nil ? Theme.inkSecondary : Theme.info)
+                .frame(width: 38, height: 38)
+                .background(.thinMaterial, in: Circle())
+                .overlay(Circle().stroke(Theme.gold.opacity(0.35), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+        .disabled(location.coordinate == nil)
     }
 
     /// Пояснение под картой для Евростара: легенда сегментов из Transitous,
@@ -172,6 +199,8 @@ struct RouteDetailView: View {
                 MapPolyline(coordinates: route.allCoordinates)
                     .stroke(Theme.sunset, style: StrokeStyle(lineWidth: 4, lineCap: .round, dash: [1, 10]))
             }
+
+            UserAnnotation()
         }
         // На iPad (regular) карте достаётся больше высоты — 260 pt там выглядят маркой.
         .frame(height: sizeClass == .regular ? 420 : 260)
@@ -180,6 +209,10 @@ struct RouteDetailView: View {
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .stroke(Theme.gold.opacity(0.4), lineWidth: 1.5)
         )
+        .overlay(alignment: .topTrailing) {
+            locateButton
+                .padding(10)
+        }
         .padding(.horizontal)
     }
 
