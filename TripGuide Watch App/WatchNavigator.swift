@@ -37,6 +37,8 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
     private var steps: [MKRoute.Step] = []
     private var stepEndCoords: [CLLocationCoordinate2D] = []
     private var stepIndex = 0
+    /// «Старт» нажат, но ждём первый фикс геопозиции, чтобы строить от неё.
+    private var pendingStart = false
     /// Порог (м) до конца шага, при котором считаем манёвр выполненным.
     private let maneuverThreshold: CLLocationDistance = 20
 
@@ -85,6 +87,13 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
         guard leg.supportsTurnByTurn else { return }
         errorMessage = nil
         arrived = false
+        // Маршрут строим от текущего положения. Если фикса ещё нет — ждём его
+        // (didUpdateLocations запустит расчёт, как только появится координата).
+        if userCoordinate == nil {
+            pendingStart = true
+            statusText = "Определяю положение…"
+            return
+        }
         statusText = "Строим маршрут…"
         Task { await computeRoute() }
     }
@@ -98,8 +107,10 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
     // MARK: - Расчёт и ведение
 
     private func computeRoute() async {
+        // Старт — от текущего положения (если есть фикс), иначе от точки отправления отрезка.
+        let origin = userCoordinate ?? leg.from
         let request = MKDirections.Request()
-        request.source = MKMapItem(location: CLLocation(latitude: leg.from.latitude, longitude: leg.from.longitude), address: nil)
+        request.source = MKMapItem(location: CLLocation(latitude: origin.latitude, longitude: origin.longitude), address: nil)
         request.destination = MKMapItem(location: CLLocation(latitude: leg.to.latitude, longitude: leg.to.longitude), address: nil)
         request.transportType = leg.transport
         do {
@@ -178,6 +189,12 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
         Task { @MainActor [weak self] in
             guard let self else { return }
             self.userCoordinate = coordinate
+            // Появился первый фикс — запускаем отложенный «Старт» от текущего положения.
+            if self.pendingStart {
+                self.pendingStart = false
+                self.statusText = "Строим маршрут…"
+                await self.computeRoute()
+            }
             if self.isNavigating {
                 self.advanceIfNeeded(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
             }

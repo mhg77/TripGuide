@@ -21,7 +21,7 @@ struct WatchNavigationView: View {
             VStack(spacing: 8) {
                 // Превью карты — некликабельная (жесты выключены), тап открывает полный экран.
                 NavigationLink {
-                    WatchFullMapView(nav: nav)
+                    WatchFullMapView(nav: nav, leg: leg)
                 } label: {
                     mapPreview
                 }

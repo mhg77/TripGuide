@@ -75,9 +75,9 @@ struct MapTabView: View {
             }
             .mapStyle(.standard)
             .ignoresSafeArea(edges: .bottom)
-            .overlay(alignment: .topTrailing) {
+            .overlay(alignment: .bottomTrailing) {
                 locateButton
-                    .padding(10)
+                    .padding(14)
             }
 
             if let routeInfo {
@@ -113,11 +113,12 @@ struct MapTabView: View {
             }
         } label: {
             Image(systemName: "location.fill")
-                .font(.system(size: 15, weight: .semibold))
+                .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(location.coordinate == nil ? Theme.inkSecondary : Theme.info)
-                .frame(width: 38, height: 38)
+                .frame(width: 46, height: 46)
                 .background(.thinMaterial, in: Circle())
-                .overlay(Circle().stroke(Theme.gold.opacity(0.35), lineWidth: 1))
+                .overlay(Circle().stroke(Theme.gold.opacity(0.4), lineWidth: 1))
+                .shadow(color: .black.opacity(0.25), radius: 4, y: 2)
         }
         .buttonStyle(.plain)
         .disabled(location.coordinate == nil)
@@ -204,11 +205,11 @@ struct MapTabView: View {
         }
     }
 
-    /// Ссылка на пошаговую навигацию Google Maps в подходящем режиме.
-    private func googleDirectionsURL(from: POI, to: POI) -> URL? {
+    /// Ссылка на пошаговую навигацию Google Maps от текущего местоположения к точке
+    /// (origin не задаём — Google строит от «Вашего местоположения»).
+    private func googleDirectionsURL(to: POI) -> URL? {
         let mode = routeIsTransit ? "transit" : "walking"
-        let string = "https://www.google.com/maps/dir/?api=1&origin=\(from.latitude),\(from.longitude)&destination=\(to.latitude),\(to.longitude)&travelmode=\(mode)"
-        return URL(string: string)
+        return URL(string: "https://www.google.com/maps/dir/?api=1&destination=\(to.latitude),\(to.longitude)&travelmode=\(mode)")
     }
 
     private func routeBar(_ text: String) -> some View {
@@ -223,15 +224,19 @@ struct MapTabView: View {
 
             Spacer(minLength: 8)
 
-            if let currentOrigin, let selectedPOI,
-               let url = googleDirectionsURL(from: currentOrigin, to: selectedPOI) {
+            if let selectedPOI,
+               let url = googleDirectionsURL(to: selectedPOI) {
                 Button {
                     Haptics.tap()
                     openURL(url)
                 } label: {
-                    Label("Навигация", systemImage: "arrow.triangle.turn.up.right.circle.fill")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Theme.sunset)
+                    Label("Google Maps", systemImage: "arrow.triangle.turn.up.right.diamond.fill")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Theme.sunset, in: Capsule())
+                        .overlay(Capsule().stroke(Theme.goldLight.opacity(0.6), lineWidth: 1))
                 }
                 .buttonStyle(.pressable)
             }

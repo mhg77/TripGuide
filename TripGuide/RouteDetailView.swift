@@ -92,11 +92,12 @@ struct RouteDetailView: View {
             }
         } label: {
             Image(systemName: "location.fill")
-                .font(.system(size: 15, weight: .semibold))
+                .font(.system(size: 18, weight: .semibold))
                 .foregroundStyle(location.coordinate == nil ? Theme.inkSecondary : Theme.info)
-                .frame(width: 38, height: 38)
+                .frame(width: 46, height: 46)
                 .background(.thinMaterial, in: Circle())
-                .overlay(Circle().stroke(Theme.gold.opacity(0.35), lineWidth: 1))
+                .overlay(Circle().stroke(Theme.gold.opacity(0.4), lineWidth: 1))
+                .shadow(color: .black.opacity(0.25), radius: 4, y: 2)
         }
         .buttonStyle(.plain)
         .disabled(location.coordinate == nil)
@@ -209,9 +210,9 @@ struct RouteDetailView: View {
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .stroke(Theme.gold.opacity(0.4), lineWidth: 1.5)
         )
-        .overlay(alignment: .topTrailing) {
+        .overlay(alignment: .bottomTrailing) {
             locateButton
-                .padding(10)
+                .padding(14)
         }
         .padding(.horizontal)
     }

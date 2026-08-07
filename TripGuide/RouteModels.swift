@@ -85,16 +85,10 @@ struct RouteLeg: Identifiable {
         [originCoordinate] + waypoints.map(\.coordinate) + [destinationCoordinate]
     }
 
-    /// Универсальная ссылка Google Maps с заездом по путевым точкам.
+    /// Ссылка Google Maps на маршрут от текущего местоположения пользователя к точке
+    /// назначения. Origin не задаём — Google строит от «Вашего местоположения».
     var googleMapsURL: URL? {
         let travelmode = (mode == .car) ? "driving" : "transit"
-        var string = "https://www.google.com/maps/dir/?api=1&origin=\(originLat),\(originLon)&destination=\(destLat),\(destLon)&travelmode=\(travelmode)"
-        if !waypoints.isEmpty {
-            let wpStr = waypoints.map { "\($0.lat),\($0.lon)" }.joined(separator: "|")
-            if let encoded = wpStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-                string += "&waypoints=\(encoded)"
-            }
-        }
-        return URL(string: string)
+        return URL(string: "https://www.google.com/maps/dir/?api=1&destination=\(destLat),\(destLon)&travelmode=\(travelmode)")
     }
 }
