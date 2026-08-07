@@ -16,14 +16,14 @@ A SwiftUI travel guide app: 23 days along the route London → Paris → Bruges 
 - **23-day calendar** — tap any day to open its plan, map, and bookings
 - **In-day map** — routes between stops along real roads (offline, geometry bundled in the app)
 - **100 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
-- **Routes tab** — all transfers with map and "Open in Google Maps" button
+- **Routes tab** — all transfers with a map and an "Open in Google Maps" button (directions from your current location)
 - **Info tab** — documents, money, weather, budget, and backup plans
 - **Bookings & tickets** — all hotels, transport, and attractions with dates
 - **Swipe between days** — left/right without going back to the calendar
 - **Easter eggs** — triple-tap on a day's plan screen triggers a unique animation for each of the 23 days
-- **User location on maps** — live blue dot and a "locate me" button on the day and transfer maps
+- **User location on maps** — live blue dot and a "locate me" button on the day and transfer maps; navigation opens directions from your current location
 - **iPad support** — comfortable column width, larger map
-- **Apple Watch app** — two screens (walking / driving routes) with turn-by-turn navigation: live location, voice + haptic maneuver prompts, and a full-screen map with a "locate me" button. Runs standalone and installs from the paired iPhone.
+- **Apple Watch app** — two screens (walking / driving routes) with turn-by-turn navigation **from your current location**: live location, voice + haptic maneuver prompts, and a full-screen map (live route from your position, auto-hiding controls). Runs standalone and installs from the paired iPhone.
 
 ## Tech Stack
 
@@ -36,7 +36,7 @@ A SwiftUI travel guide app: 23 days along the route London → Paris → Bruges 
 | Offline routes | OSRM (roads), Transitous / GTFS (Eurostar) |
 | Geometry | Google Encoded Polyline (100 routes in `BundledRoutes.swift`) |
 | Tests | Swift Testing framework (17 tests) |
-| Language | Swift 6 |
+| Language | Swift 5 language mode (Xcode 26 toolchain) |
 
 ## Project Structure
 
