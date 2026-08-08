@@ -29,12 +29,17 @@ struct WatchFullMapView: View {
         .ignoresSafeArea()
         // Любое движение карты (жест или наши кнопки) прячет кнопки; вернём, когда стихнет.
         .onMapCameraChange(frequency: .continuous) { _ in scheduleHideControls() }
+        // Тап по экрану — переключает видимость кнопок.
+        .onTapGesture {
+            hideTask?.cancel()
+            withAnimation(.easeInOut(duration: 0.2)) { controlsVisible.toggle() }
+        }
         .overlay(alignment: .bottom) {
             HStack(spacing: 12) {
                 mapButton("location.fill", tint: .blue, action: centerOnUser)
                 mapButton("arrow.up.left.and.arrow.down.right", tint: .orange) { camera = .automatic }
             }
-            .padding(.bottom, 4)
+            .padding(.bottom, 2)
             .opacity(controlsVisible ? 1 : 0)
             .animation(.easeInOut(duration: 0.2), value: controlsVisible)
             .allowsHitTesting(controlsVisible)

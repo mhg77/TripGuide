@@ -5,15 +5,11 @@ import AVFoundation
 import WatchKit
 import Observation
 
-/// Движок навигации по одному отрезку.
-/// Пока экран открыт — держит активную сессию геопозиции (синяя точка на карте
-/// и координаты для кнопки «где я»). По «Старт» считает маршрут через MKDirections
-/// и ведёт по шагам MKRoute.step: подсказки манёвров озвучиваются голосом,
-/// показываются всплывающим баннером и сопровождаются тактильным откликом.
+/// Навигация по одному отрезку: держит сессию геопозиции, по «Старту» строит
+/// маршрут через MKDirections и ведёт по шагам — голосом, баннером и вибрацией.
 @Observable
 final class WatchNavigator: NSObject, CLLocationManagerDelegate {
 
-    // Наблюдаемое состояние интерфейса.
     var statusText = "Нажмите «Старт»"
     var currentInstruction = ""
     var nextInstruction: String?
@@ -51,10 +47,8 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
         manager.activityType = leg.transport == .automobile ? .automotiveNavigation : .fitness
     }
 
-    /// Появление экрана: запрашиваем доступ и включаем поток геопозиции,
-    /// чтобы точка на карте зажглась сразу, ещё до старта навигации.
-    /// Если объявлен фоновый режим — держим геопозицию и когда часы «в кармане»
-    /// и iPhone заблокирован (свой GPS часов + фоновая сессия).
+    /// Запрашиваем доступ и запускаем поток геопозиции при появлении экрана.
+    /// Фоновый режим (если объявлен) держит позицию и с погашенным экраном.
     func activate() {
         manager.requestWhenInUseAuthorization()
         if Self.backgroundLocationEnabled {
@@ -71,8 +65,7 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
         speech.stopSpeaking(at: .immediate)
     }
 
-    /// Включать фоновую геопозицию можно только если в Info объявлен режим "location",
-    /// иначе выставление allowsBackgroundLocationUpdates=true — фатальный краш.
+    // allowsBackgroundLocationUpdates=true без режима "location" в Info роняет приложение — проверяем.
     private static let backgroundLocationEnabled: Bool = {
         for key in ["WKBackgroundModes", "UIBackgroundModes"] {
             if let modes = Bundle.main.object(forInfoDictionaryKey: key) as? [String],
@@ -87,8 +80,7 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
         guard leg.supportsTurnByTurn else { return }
         errorMessage = nil
         arrived = false
-        // Маршрут строим от текущего положения. Если фикса ещё нет — ждём его
-        // (didUpdateLocations запустит расчёт, как только появится координата).
+        // Строим от текущего положения; если фикса ещё нет — ждём его.
         if userCoordinate == nil {
             pendingStart = true
             statusText = "Определяю положение…"
@@ -171,8 +163,7 @@ final class WatchNavigator: NSObject, CLLocationManagerDelegate {
     }
 
     // MARK: - CLLocationManagerDelegate
-    // Колбэки CoreLocation могут приходить не на главном потоке — обновляем
-    // @Observable-состояние через Task на MainActor (не падает при любом потоке).
+    // Колбэки могут приходить не на главном потоке — состояние правим на MainActor.
 
     nonisolated func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         let status = manager.authorizationStatus

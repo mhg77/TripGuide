@@ -31,8 +31,7 @@ struct WatchCarLeg: Identifiable {
     }
 }
 
-/// 9 переездов маршрута — метаданные зеркалят RouteData основного приложения,
-/// а геометрия берётся из общего BundledRoutes, поэтому линии не расходятся.
+/// 9 переездов поездки; геометрия линий берётся из общего BundledRoutes.
 enum WatchCarData {
     static let legs: [WatchCarLeg] = [
         WatchCarLeg(id: 1, dateLabel: "13.09", title: "Лондон → Париж", isTrain: true,

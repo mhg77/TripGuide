@@ -25,9 +25,7 @@ struct WatchWalkLeg: Identifiable {
     }
 }
 
-/// Собирает пешие отрезки из данных поездки: берём соседние точки каждого дня,
-/// для которых во вшитых маршрутах стоит признак isWalk. Данные (TripData,
-/// BundledRoutes, Models) общие с основным приложением — расхождений нет.
+/// Пешие отрезки дней: соседние точки, у которых во вшитых маршрутах стоит isWalk.
 enum WatchWalkData {
     static let legs: [WatchWalkLeg] = build()
 
