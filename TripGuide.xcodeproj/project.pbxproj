@@ -18,20 +18,6 @@
 			remoteGlobalIDString = 277AB23D3023478A0091AABB;
 			remoteInfo = "TripGuide Watch App";
 		};
-		277AB24E3023478C0091AABB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 27BAD4D7300AA4A000B58520 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 277AB23D3023478A0091AABB;
-			remoteInfo = "TripGuideWatch Watch App";
-		};
-		277AB2583023478C0091AABB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 27BAD4D7300AA4A000B58520 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 277AB23D3023478A0091AABB;
-			remoteInfo = "TripGuideWatch Watch App";
-		};
 		27F807CB300E9E32001BE78A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27BAD4D7300AA4A000B58520 /* Project object */;
@@ -57,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		277AB23E3023478A0091AABB /* TripGuide Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TripGuide Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		277AB24D3023478C0091AABB /* TripGuideWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TripGuideWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		277AB2573023478C0091AABB /* TripGuideWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TripGuideWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BAD4DF300AA4A000B58520 /* TripGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F807C7300E9E32001BE78A /* TripGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,20 +88,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		277AB24A3023478C0091AABB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		277AB2543023478C0091AABB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		27BAD4DC300AA4A000B58520 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,8 +121,6 @@
 				27BAD4DF300AA4A000B58520 /* TripGuide.app */,
 				27F807C7300E9E32001BE78A /* TripGuideTests.xctest */,
 				277AB23E3023478A0091AABB /* TripGuide Watch App.app */,
-				277AB24D3023478C0091AABB /* TripGuideWatch Watch AppTests.xctest */,
-				277AB2573023478C0091AABB /* TripGuideWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,46 +149,6 @@
 			productName = "TripGuideWatch Watch App";
 			productReference = 277AB23E3023478A0091AABB /* TripGuide Watch App.app */;
 			productType = "com.apple.product-type.application";
-		};
-		277AB24C3023478C0091AABB /* TripGuideWatch Watch AppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 277AB26A3023478C0091AABB /* Build configuration list for PBXNativeTarget "TripGuideWatch Watch AppTests" */;
-			buildPhases = (
-				277AB2493023478C0091AABB /* Sources */,
-				277AB24A3023478C0091AABB /* Frameworks */,
-				277AB24B3023478C0091AABB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				277AB24F3023478C0091AABB /* PBXTargetDependency */,
-			);
-			name = "TripGuideWatch Watch AppTests";
-			packageProductDependencies = (
-			);
-			productName = "TripGuideWatch Watch AppTests";
-			productReference = 277AB24D3023478C0091AABB /* TripGuideWatch Watch AppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		277AB2563023478C0091AABB /* TripGuideWatch Watch AppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 277AB26B3023478C0091AABB /* Build configuration list for PBXNativeTarget "TripGuideWatch Watch AppUITests" */;
-			buildPhases = (
-				277AB2533023478C0091AABB /* Sources */,
-				277AB2543023478C0091AABB /* Frameworks */,
-				277AB2553023478C0091AABB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				277AB2593023478C0091AABB /* PBXTargetDependency */,
-			);
-			name = "TripGuideWatch Watch AppUITests";
-			packageProductDependencies = (
-			);
-			productName = "TripGuideWatch Watch AppUITests";
-			productReference = 277AB2573023478C0091AABB /* TripGuideWatch Watch AppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		27BAD4DE300AA4A000B58520 /* TripGuide */ = {
 			isa = PBXNativeTarget;
@@ -282,14 +210,6 @@
 					277AB23D3023478A0091AABB = {
 						CreatedOnToolsVersion = 26.6;
 					};
-					277AB24C3023478C0091AABB = {
-						CreatedOnToolsVersion = 26.6;
-						TestTargetID = 277AB23D3023478A0091AABB;
-					};
-					277AB2563023478C0091AABB = {
-						CreatedOnToolsVersion = 26.6;
-						TestTargetID = 277AB23D3023478A0091AABB;
-					};
 					27BAD4DE300AA4A000B58520 = {
 						CreatedOnToolsVersion = 26.6;
 					};
@@ -316,28 +236,12 @@
 				27BAD4DE300AA4A000B58520 /* TripGuide */,
 				27F807C6300E9E32001BE78A /* TripGuideTests */,
 				277AB23D3023478A0091AABB /* TripGuide Watch App */,
-				277AB24C3023478C0091AABB /* TripGuideWatch Watch AppTests */,
-				277AB2563023478C0091AABB /* TripGuideWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		277AB23C3023478A0091AABB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		277AB24B3023478C0091AABB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		277AB2553023478C0091AABB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,20 +272,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		277AB2493023478C0091AABB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		277AB2533023478C0091AABB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		27BAD4DB300AA4A000B58520 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,16 +293,6 @@
 			isa = PBXTargetDependency;
 			target = 277AB23D3023478A0091AABB /* TripGuide Watch App */;
 			targetProxy = 276C2AC03023C935002CF740 /* PBXContainerItemProxy */;
-		};
-		277AB24F3023478C0091AABB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 277AB23D3023478A0091AABB /* TripGuide Watch App */;
-			targetProxy = 277AB24E3023478C0091AABB /* PBXContainerItemProxy */;
-		};
-		277AB2593023478C0091AABB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 277AB23D3023478A0091AABB /* TripGuide Watch App */;
-			targetProxy = 277AB2583023478C0091AABB /* PBXContainerItemProxy */;
 		};
 		27F807CC300E9E32001BE78A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -494,96 +374,6 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 26.5;
-			};
-			name = Release;
-		};
-		277AB2643023478C0091AABB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3253F3AX7M;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.hashier.TripGuideWatch-Watch-AppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripGuideWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TripGuideWatch Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 26.5;
-			};
-			name = Debug;
-		};
-		277AB2653023478C0091AABB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3253F3AX7M;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.hashier.TripGuideWatch-Watch-AppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripGuideWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TripGuideWatch Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 26.5;
-			};
-			name = Release;
-		};
-		277AB2663023478C0091AABB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3253F3AX7M;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.hashier.TripGuideWatch-Watch-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_TARGET_NAME = "TripGuideWatch Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 26.5;
-			};
-			name = Debug;
-		};
-		277AB2673023478C0091AABB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3253F3AX7M;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.hashier.TripGuideWatch-Watch-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_TARGET_NAME = "TripGuideWatch Watch App";
 				WATCHOS_DEPLOYMENT_TARGET = 26.5;
 			};
 			name = Release;
@@ -827,24 +617,6 @@
 			buildConfigurations = (
 				277AB2623023478C0091AABB /* Debug */,
 				277AB2633023478C0091AABB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		277AB26A3023478C0091AABB /* Build configuration list for PBXNativeTarget "TripGuideWatch Watch AppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				277AB2643023478C0091AABB /* Debug */,
-				277AB2653023478C0091AABB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		277AB26B3023478C0091AABB /* Build configuration list for PBXNativeTarget "TripGuideWatch Watch AppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				277AB2663023478C0091AABB /* Debug */,
-				277AB2673023478C0091AABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
