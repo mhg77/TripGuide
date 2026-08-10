@@ -146,7 +146,7 @@
 			name = "TripGuide Watch App";
 			packageProductDependencies = (
 			);
-			productName = "TripGuideWatch Watch App";
+			productName = "TripGuide Watch App";
 			productReference = 277AB23E3023478A0091AABB /* TripGuide Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
