@@ -10,74 +10,69 @@ enum TripData {
         // MARK: - ЛОНДОН (05–13.09, 8 ночей)
 
         TripDay(
-            id: 1, day: 5, weekday: "Сб", city: .london, subtitle: "Прилёт · South Bank",
+            id: 1, day: 5, weekday: "Сб", city: .london, subtitle: "Прилёт · Portobello",
             intro: """
-            Столица начинает маршрут — восемь дней пешком и на метро, без машины. Обязательные точки разбросаны по первой неделе, остальное — свободные прогулки.
+            Столица открывает маршрут — восемь дней без машины, пешком и на метро (аренда авто только на день в Котсуолдс).
 
-            Ночлег · 8 ночей, Covent Garden
-            Henrietta Experimental ★★★★ — €175–260/ночь. Дизайнерский, тихий, 2 мин до Savoy Theatre.
-            The Z Hotel Covent Garden ★★★ — €100–200/ночь. Компактный, бюджетнее, тоже в центре.
+            Ночлег · 7 ночей, Хаммерсмит
+            5 Stanwick Road, W14 8TL (Hammersmith & Fulham). До центра ~20–30 мин на метро (District/Piccadilly). Отдельно 09.09 — одна ночь в Берфорде (Котсуолдс).
             """,
             blocks: [
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Заселение в отель, лёгкая прогулка без спешки — освоиться после перелёта."),
-                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "South Bank вдоль Темзы, London Eye на закате, вид на Биг-Бен с моста."),
-                PlanBlock(icon: "ticket.fill", label: "Билет (опция)", text: "London Eye — €65–95 за двоих (стандартный слот). Fast Track с отдельной очередью — доплата ~€45–55 на двоих. Без него очередь на посадку 20–40 минут в разгар дня, с Fast Track — около 5 минут."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Sea Containers Restaurant (вид на реку) или проще — Giraffe."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "~14:00–15:00 · Прилёт, заселение на Stanwick Road, разбор вещей без спешки после перелёта."),
+                PlanBlock(icon: "figure.walk", label: "Прогулка", text: "16:00–18:00 · Portobello Road (Ноттинг-Хилл) — антиквариат, винтаж, стрит-фуд. ~15 минут от отеля."),
+                PlanBlock(icon: "fork.knife", label: "Ужин", text: "18:30 · Shake Shack в Westfield London (Shepherd's Bush) — 10 минут от рынка, сытно и без брони."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
-                POI(name: "South Bank", category: .sight, latitude: 51.5063, longitude: -0.1147),
-                POI(name: "London Eye", category: .sight, latitude: 51.5033, longitude: -0.1195),
-                POI(name: "Биг-Бен (вид с моста)", category: .sight, latitude: 51.5007, longitude: -0.1246),
-                POI(name: "Sea Containers Restaurant", category: .food, latitude: 51.5075, longitude: -0.1078),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
+                POI(name: "Portobello Road Market", category: .activity, latitude: 51.5165, longitude: -0.2055),
+                POI(name: "Shake Shack, Westfield London", category: .food, latitude: 51.5079, longitude: -0.2246),
             ],
             warning: nil,
-            fact: "London Eye строили как временную конструкцию к миллениуму 2000 года — колесо должно было простоять всего пять лет, но оказалось настолько популярным, что стало постоянным символом города.",
-            todayFocus: "South Bank и London Eye — 10 минут пешком от отеля."
+            fact: "Portobello Road — самый длинный антикварный рынок под открытым небом в мире, растянувшийся почти на 1,6 км; название улице дала не итальянская гавань, а ферма XVIII века, названная в честь взятия панамского порта Portobelo в 1739 году.",
+            todayFocus: "Лёгкий день после перелёта: Portobello и ужин рядом."
         ),
 
         TripDay(
-            id: 2, day: 6, weekday: "Вс", city: .london, subtitle: "Вестминстер",
+            id: 2, day: 6, weekday: "Вс", city: .london, subtitle: "Вестминстер · Arsenal–Chelsea",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Букингемский дворец (смена караула, если по расписанию), Сент-Джеймсский парк."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Blue Boar Pub рядом с Вестминстером."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Вестминстерское аббатство, Биг-Бен, Трафальгарская площадь, при желании — Национальная галерея."),
-                PlanBlock(icon: "ticket.fill", label: "Билет", text: "Вестминстерское аббатство — €65–70 за двоих, вход строго по тайм-слоту. Фаст-трека нет: без брони очередь 45–90 минут в разгар дня, по забронированному слоту — почти без ожидания."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Marquis of Westminster."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "10:00–11:30 · Национальная галерея к открытию. Level 2, залы 43–46: импрессионизм и постимпрессионизм; зал 45 — истоки авангарда (Дега, Климт, Сезанн, Матисс). Залы 40 и 42 можно пропустить."),
+                PlanBlock(icon: "fork.knife", label: "Обед", text: "11:30–12:30 · Трафальгарская площадь, затем пикник в Сент-Джеймсском парке — meal deal из ближайшего Tesco/Sainsbury's."),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "12:30–14:00 · Букингемский дворец → конная гвардия у Уайтхолла (Horse Guards Parade) → проходим мимо Вестминстерского аббатства и Биг-Бена."),
+                PlanBlock(icon: "sportscourt.fill", label: "Футбол", text: "14:45 · выезд к Emirates Stadium (~30–40 мин, Piccadilly line до Arsenal). 15:30 — у стадиона, 16:30 — Arsenal–Chelsea."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
-                POI(name: "Букингемский дворец", category: .sight, latitude: 51.5014, longitude: -0.1419),
-                POI(name: "Сент-Джеймсский парк", category: .activity, latitude: 51.5027, longitude: -0.1329),
-                POI(name: "Blue Boar Pub", category: .food, latitude: 51.4974, longitude: -0.1349),
-                POI(name: "Вестминстерское аббатство", category: .sight, latitude: 51.4994, longitude: -0.1273),
-                POI(name: "Биг-Бен", category: .sight, latitude: 51.5007, longitude: -0.1246),
-                POI(name: "Трафальгарская площадь", category: .sight, latitude: 51.5080, longitude: -0.1281),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
                 POI(name: "Национальная галерея", category: .sight, latitude: 51.5089, longitude: -0.1283),
+                POI(name: "Трафальгарская площадь", category: .sight, latitude: 51.5080, longitude: -0.1281),
+                POI(name: "Сент-Джеймсский парк", category: .activity, latitude: 51.5027, longitude: -0.1329),
+                POI(name: "Букингемский дворец", category: .sight, latitude: 51.5014, longitude: -0.1419),
+                POI(name: "Horse Guards Parade", category: .sight, latitude: 51.5043, longitude: -0.1266),
+                POI(name: "Вестминстерское аббатство (снаружи)", category: .sight, latitude: 51.4994, longitude: -0.1273),
+                POI(name: "Emirates Stadium", category: .activity, latitude: 51.5549, longitude: -0.1084),
             ],
-            warning: nil,
+            warning: "Смена конного караула у Horse Guards в 10:00 (вс) совпадает с открытием Национальной галереи — придётся выбрать одно; конные часовые всё равно стоят там весь день.",
             fact: "«Биг-Бен» — имя большого колокола, а не башни целиком; сама башня официально называется Elizabeth Tower с 2012 года, в честь бриллиантового юбилея Елизаветы II. Колокол весит около 13,7 тонны.",
-            todayFocus: "Вестминстер и Букингемский дворец."
+            todayFocus: "Вестминстер утром, вечером — дерби Arsenal–Chelsea на Emirates."
         ),
 
         TripDay(
             id: 3, day: 7, weekday: "Пн", city: .london, subtitle: "Тауэр · Гринвич",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Тауэр Лондона, прогулка по Тауэрскому мосту."),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "09:30–12:00 · Тауэр Лондона (открытие 09:00), затем прогулка по Тауэрскому мосту."),
                 PlanBlock(icon: "ticket.fill", label: "Билет", text: "Тауэр Лондона — €65–80 за двоих по тайм-слоту. Фаст-трека нет: без брони очередь на входе/досмотре 30–60 минут в сезон, по забронированному слоту — 10–15 минут."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Borough Market — Arabica Borough Market или Boro Bistro."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Кораблик по Темзе от Тауэра до Гринвича, Cutty Sark, Королевская обсерватория (нулевой меридиан)."),
+                PlanBlock(icon: "fork.knife", label: "Обед", text: "12:15 · Borough Market (по желанию — небольшой крюк на запад; можно пропустить, если день выходит плотным)."),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "13:00 · кораблик по Темзе Тауэр→Гринвич (~45 мин) → Cutty Sark → 15:00 Королевская обсерватория (нулевой меридиан)."),
                 PlanBlock(icon: "ticket.fill", label: "Билеты", text: "Кораблик Тауэр→Гринвич — €28–40 за двоих, фаст-трека нет, но с онлайн-билетом посадка почти сразу (без брони у кассы можно потерять 20–30 минут). Королевская обсерватория (линия Гринвичского меридиана + экспозиция) — €46–52 за двоих по тайм-слоту, очередей практически нет."),
                 PlanBlock(icon: "fork.knife", label: "Ужин", text: "Bill's Greenwich или Hawksmoor Wood Wharf."),
                 PlanBlock(icon: "wineglass.fill", label: "Вечер", text: "На обратном пути (DLR до Westferry/Limehouse) — The Grapes, крошечный паб на набережной Темзы, стоит здесь с 1583 года. Совладелец — Иэн Маккеллен, живёт на этой же улице; по понедельникам с 20:00 тут знаменитый паб-квиз, который он иногда ведёт сам. Столы не бронируют — приходите заранее."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
                 POI(name: "Тауэр Лондона", category: .sight, latitude: 51.5081, longitude: -0.0759),
                 POI(name: "Тауэрский мост", category: .sight, latitude: 51.5055, longitude: -0.0754),
                 POI(name: "Borough Market", category: .food, latitude: 51.5055, longitude: -0.0910),
@@ -85,24 +80,24 @@ enum TripData {
                 POI(name: "Королевская обсерватория, Гринвич", category: .sight, latitude: 51.4769, longitude: -0.0005),
                 POI(name: "The Grapes, Лаймхаус", category: .food, latitude: 51.5092, longitude: -0.0370),
             ],
-            warning: nil,
+            warning: "Самый насыщенный день в Лондоне (≈09:00–21:00). Чтобы разгрузить — можно пропустить Borough Market. Разведение Тауэрского моста бывает по расписанию (несколько раз в неделю) — сверьтесь заранее, если хотите застать.",
             fact: "Гринвичская обсерватория стоит точно на нулевом меридиане — можно встать одной ногой в Западном, а другой в Восточном полушарии. Именно отсюда отсчитывается всемирное время (GMT).",
-            todayFocus: "Тауэр, Тауэрский мост, Borough Market и Гринвич по Темзе."
+            todayFocus: "Тауэр, Тауэрский мост и Гринвич по Темзе; вечером — The Grapes."
         ),
 
         TripDay(
             id: 4, day: 8, weekday: "Вт", city: .london, subtitle: "Harry Potter Studio Tour",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Целиком на Warner Bros. Studio Tour в Уотфорде (шаттл от Watford Junction). Билеты уже должны быть куплены заранее — закладывайте 3–4 часа на сам тур."),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "Поезд Хаммерсмит → Watford Junction (~40–50 мин) + шаттл к студии. Целиком на Warner Bros. Studio Tour — тайм-слот тура, закладывайте 3–4 часа."),
                 PlanBlock(icon: "ticket.fill", label: "Билет", text: "£58.50 (~€68) с человека, вход строго по забронированному тайм-слоту. Отдельного фаст-трека нет и не нужен — с билетом на входе ждать около 15 минут в любом случае."),
                 PlanBlock(icon: "fork.knife", label: "Обед", text: "Кафе на территории студии (Backlot Café)."),
                 PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Возврат в центр, свободный вечер — можно просто отдохнуть у отеля."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
                 // Порядок повторяет день: поезд до Watford Junction, оттуда шаттл к студии.
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
                 POI(name: "Watford Junction", category: .transfer, latitude: 51.6634, longitude: -0.3958),
                 POI(name: "Warner Bros. Studio Tour", category: .activity, latitude: 51.6925, longitude: -0.4165),
             ],
@@ -116,18 +111,18 @@ enum TripData {
             id: 5, day: 9, weekday: "Ср", city: .london, subtitle: "Котсуолдс · паб Кларксона · Берфорд",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "car.fill", label: "День", text: "Поездка на арендованной машине в Оксфордшир (~1,5 ч). По пути — Bourton-on-the-Water с живописными мостами через реку Уиндраш. Бронь в пабе обязательна, закрыт вс/пн."),
+                PlanBlock(icon: "car.fill", label: "День", text: "Утром забираете арендованную машину, выезд в Оксфордшир (~2 ч из Хаммерсмита). По пути — Bourton-on-the-Water с мостами через реку Уиндраш. Бронь в пабе обязательна, закрыт вс/пн."),
                 PlanBlock(icon: "fork.knife", label: "Обед", text: "The Farmer's Dog — паб Джереми Кларксона в Astall. Стейк-пай и раклет-крамбл — фирменные блюда."),
                 PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Берфорд — один из красивейших городков Котсуолдса: медово-жёлтые известняковые фасады на High Street, антикварные лавки, мост через реку Уиндраш."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "The Royal Oak, Берфорд"),
-                PlanBlock(icon: "map.fill", label: "Маршрут", text: "Лондон → Котсуолдс → Берфорд, ~117 км / 1 ч 45 мин на арендованной машине."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Prince of Burford, Берфорд"),
+                PlanBlock(icon: "map.fill", label: "Маршрут", text: "Хаммерсмит → Котсуолдс → Берфорд, ~135 км / ~2 ч на арендованной машине."),
             ],
             pois: [
                 // Отель — стартовая точка дня: от него строится маршрут до паба и далее в Берфорд.
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
                 POI(name: "Bourton-on-the-Water", category: .sight, latitude: 51.8767, longitude: -1.7530),
                 POI(name: "The Farmer's Dog, Astall", category: .food, latitude: 51.8020, longitude: -1.6230),
-                POI(name: "The Royal Oak, Берфорд", category: .hotel, latitude: 51.8118, longitude: -1.6356),
+                POI(name: "Prince of Burford, Берфорд", category: .hotel, latitude: 51.8103, longitude: -1.6360),
             ],
             warning: nil,
             fact: "Котсуолдс застроен характерным медово-жёлтым известняком, который называют «котсуолдским камнем» — при закате он приобретает золотистый оттенок, из-за чего регион иногда называют «краем мёда и масла».",
@@ -139,65 +134,68 @@ enum TripData {
             id: 6, day: 10, weekday: "Чт", city: .london, subtitle: "Британский музей · Сохо",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "car.fill", label: "Утро", text: "Завтрак в The Royal Oak, прогулка по старому Берфорду — исторический High Street. Выезд обратно в Лондон (~117 км / 1 ч 45 мин), сдача арендованной машины."),
-                PlanBlock(icon: "sunrise.fill", label: "День", text: "Британский музей (вход бесплатный, закладывайте 2–3 часа)."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Covent Garden, любое кафе рядом с отелем."),
-                PlanBlock(icon: "sun.max.fill", label: "Вечер", text: "Прогулка по Сохо, флагман Stone Island на 79 Brewer St."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Blacklock Soho (стейк-хаус) или Scarlett Green."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "car.fill", label: "Утро", text: "Завтрак в Берфорде, прогулка по историческому High Street, выезд обратно в Лондон (~135 км / ~2 ч), сдача арендованной машины."),
+                PlanBlock(icon: "sunrise.fill", label: "День", text: "12:00–14:00 · Британский музей (бесплатно). Египет: зал 4 (скульптура) и залы 61–66 (мумии, загробный мир); Месопотамия и Ассирия — залы 6–10."),
+                PlanBlock(icon: "sun.max.fill", label: "Прогулка", text: "14:30 · Сохо, флагман Stone Island на 79 Brewer St."),
+                PlanBlock(icon: "fork.knife", label: "Ужин", text: "16:30 · Blacklock Soho — стейк-хаус."),
+                PlanBlock(icon: "wineglass.fill", label: "Вечер", text: "18:00–20:00 · экскурсия «Вековые пабы Лондона» — старт у Blue Plaque (Christ's Hospital, EC1A 7BA)."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
-                POI(name: "The Royal Oak, Берфорд", category: .hotel, latitude: 51.8118, longitude: -1.6356),
+                POI(name: "Prince of Burford, Берфорд", category: .hotel, latitude: 51.8103, longitude: -1.6360),
                 POI(name: "Британский музей", category: .sight, latitude: 51.5194, longitude: -0.1270),
                 POI(name: "Сохо", category: .sight, latitude: 51.5136, longitude: -0.1367),
                 POI(name: "Stone Island, 79 Brewer St", category: .activity, latitude: 51.5129, longitude: -0.1365),
                 POI(name: "Blacklock Soho", category: .food, latitude: 51.5128, longitude: -0.1329),
+                POI(name: "Паб-экскурсия (старт)", category: .activity, latitude: 51.5163, longitude: -0.0990),
             ],
-            warning: nil,
+            warning: "Плотный день: утренний перегон из Берфорда + музей + вечерняя паб-экскурсия. По музею — только ключевые залы, чтобы успеть к 18:00.",
             fact: "Британский музей был первым в мире национальным публичным музеем (открыт в 1753 году) и с самого начала задумывался как бесплатный для всех посетителей — этот принцип соблюдается до сих пор.",
-            todayFocus: "Британский музей и Сохо — оба в 10–15 минутах пешком от отеля."
+            todayFocus: "Британский музей, Сохо и вечерняя экскурсия по историческим пабам."
         ),
 
         TripDay(
-            id: 7, day: 11, weekday: "Пт", city: .london, subtitle: "Camden Market",
+            id: 7, day: 11, weekday: "Пт", city: .london, subtitle: "Camden · Little Venice",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Camden Market — рынок с едой и винтажными лавками."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Magic Falafel или Bun Boy Korean Street Food прямо на рынке."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Прогулка вдоль Regent's Canal в сторону Little Venice."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Свободный выбор в центре — можно вернуться в Ковент-Гарден."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "11:00 · бранч в Coretto by the Canal — шампань-бранч у канала."),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "12:30 · Camden Market и Camden Locks — еда, винтаж, шлюзы канала."),
+                PlanBlock(icon: "figure.walk", label: "Прогулка", text: "14:00 · вдоль Regent's Canal на запад → Little Venice."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
+                POI(name: "Coretto by the Canal", category: .food, latitude: 51.5405, longitude: -0.1400),
                 POI(name: "Camden Market", category: .activity, latitude: 51.5416, longitude: -0.1462),
+                POI(name: "Camden Locks", category: .activity, latitude: 51.5407, longitude: -0.1440),
                 POI(name: "Regent's Canal", category: .sight, latitude: 51.5290, longitude: -0.1730),
                 POI(name: "Little Venice", category: .sight, latitude: 51.5210, longitude: -0.1830),
             ],
             warning: nil,
             fact: "Camden Market вырос из одной небольшой ремесленной ярмарки 1974 года на месте бывших конюшен и сегодня принимает около 250 000 посетителей в неделю — это один из самых посещаемых рынков мира.",
-            todayFocus: "Camden Market, дальше пешком вдоль канала на запад."
+            todayFocus: "Лёгкий день: бранч у канала, Camden и прогулка до Little Venice."
         ),
 
         TripDay(
-            id: 8, day: 12, weekday: "Сб", city: .london, subtitle: "Portobello Road",
+            id: 8, day: 12, weekday: "Сб", city: .london, subtitle: "Хаммерсмит · парки · London Eye",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Portobello Road Market — суббота лучший день для рынка (антиквариат, винтаж, стрит-фуд)."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Dishoom Permit Room Portobello или Eggslut Portobello."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Кенсингтон-гарденс, Гайд-парк; вечером — сборы к отъезду."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Прощальный ужин рядом с отелем в Ковент-Гардене."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Covent Garden"),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "11:00 · бранч в The Truth (Хаммерсмит), в двух шагах от отеля."),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "12:30 · Кенсингтон-гарденс → Гайд-парк, неспешная прогулка по паркам."),
+                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "17:30 · London Eye на закате — прощальный вид на Вестминстер и Темзу."),
+                PlanBlock(icon: "ticket.fill", label: "Билет", text: "London Eye — €65–95 за двоих (стандартный слот). Fast Track — доплата ~€45–55; без него очередь 20–40 минут в разгар дня, с ним ~5 минут."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
             ],
             pois: [
-                POI(name: "Отель, Covent Garden", category: .hotel, latitude: 51.5117, longitude: -0.1240),
-                POI(name: "Portobello Road Market", category: .activity, latitude: 51.5158, longitude: -0.2049),
-                POI(name: "Кенсингтон-гарденс", category: .activity, latitude: 51.5073, longitude: -0.1857),
+                POI(name: "Отель, Хаммерсмит", category: .hotel, latitude: 51.4906, longitude: -0.2058),
+                POI(name: "The Truth, Хаммерсмит", category: .food, latitude: 51.4918, longitude: -0.2235),
+                POI(name: "Кенсингтон-гарденс", category: .activity, latitude: 51.5073, longitude: -0.1799),
                 POI(name: "Гайд-парк", category: .activity, latitude: 51.5073, longitude: -0.1657),
+                POI(name: "London Eye", category: .sight, latitude: 51.5033, longitude: -0.1195),
             ],
             warning: nil,
-            fact: "Portobello Road — самый длинный антикварный рынок под открытым небом в мире, растянувшийся почти на 1,6 км; название улице дала не итальянская гавань, а ферма XVIII века, названная в честь взятия панамского порта Portobelo в 1739 году.",
-            todayFocus: "Portobello Road и Гайд-парк на западе города."
+            fact: "London Eye строили как временную конструкцию к миллениуму 2000 года — колесо должно было простоять всего пять лет, но оказалось настолько популярным, что стало постоянным символом города.",
+            todayFocus: "Последний лондонский день: бранч, парки и London Eye на закате."
         ),
 
         // MARK: - ПАРИЖ (13–17.09, 4 ночи)

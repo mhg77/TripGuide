@@ -9,32 +9,25 @@ enum BookingData {
         // День 1 — Лондон, прилёт
         1: [
             BookingItem(
-                name: "London Eye", kind: .ticket,
-                note: "€65–95 за двоих, стандартный слот. Fast Track — доплата ~€45–55.",
-                officialURLString: "https://www.londoneye.com/tickets-and-prices/", officialLabel: "Купить билет",
-                mapsQuery: "London Eye"
-            ),
-            BookingItem(
-                name: "Henrietta Experimental ★★★★", kind: .hotel,
-                note: "€175–260/ночь · 2 мин до Savoy Theatre · 8 ночей",
-                mapsQuery: "Henrietta Experimental Hotel London",
-                bookingComQuery: "Henrietta Experimental Hotel Covent Garden London"
-            ),
-            BookingItem(
-                name: "The Z Hotel Covent Garden ★★★", kind: .hotel,
-                note: "€100–200/ночь · компактный, бюджетнее",
-                mapsQuery: "The Z Hotel Covent Garden London",
-                bookingComQuery: "The Z Hotel Covent Garden London"
+                name: "Апартаменты, 5 Stanwick Road", kind: .hotel,
+                note: "W14 8TL (Hammersmith & Fulham) · 7 ночей. До центра ~20–30 мин на метро.",
+                mapsQuery: "5 Stanwick Road London W14 8TL"
             ),
         ],
 
-        // День 2 — Вестминстер
+        // День 2 — Вестминстер · Arsenal–Chelsea
         2: [
             BookingItem(
-                name: "Вестминстерское аббатство", kind: .ticket,
-                note: "€65–70 за двоих, вход строго по тайм-слоту.",
-                officialURLString: "https://tickets.westminster-abbey.org/home/index", officialLabel: "Купить билет",
-                mapsQuery: "Westminster Abbey London"
+                name: "Национальная галерея", kind: .ticket,
+                note: "Вход бесплатный. Возьмите бесплатный тайм-слот на открытие (10:00) — меньше очередь.",
+                officialURLString: "https://www.nationalgallery.org.uk/visiting", officialLabel: "Забронировать слот",
+                mapsQuery: "National Gallery London"
+            ),
+            BookingItem(
+                name: "Arsenal – Chelsea, Emirates", kind: .ticket,
+                note: "06.09, начало 16:30 — у стадиона к 15:30. Дерби, билеты берут заранее.",
+                officialURLString: "https://www.arsenal.com/tickets", officialLabel: "Билеты",
+                mapsQuery: "Emirates Stadium London"
             ),
         ],
 
@@ -84,15 +77,53 @@ enum BookingData {
                 mapsQuery: "Car hire London city centre"
             ),
             BookingItem(
-                name: "The Royal Oak, Берфорд ★★★", kind: .hotel,
-                note: "£120–180/ночь · исторический паб-отель на High Street, 1 ночь (09.09)",
-                mapsQuery: "The Royal Oak Hotel Burford",
-                bookingComQuery: "The Royal Oak Hotel Burford Oxfordshire"
+                name: "Prince of Burford ★★★", kind: .hotel,
+                note: "Исторический дом на High Street в Берфорде, 1 ночь (09.09).",
+                mapsQuery: "Prince of Burford",
+                bookingComQuery: "Prince of Burford Burford Oxfordshire"
             ),
             BookingItem(
                 name: "The Farmer's Dog, Astall", kind: .restaurant,
                 note: "Паб Джереми Кларксона — бронь стола обязательна, закрыт вс/пн.",
                 mapsQuery: "The Farmer's Dog Asthall"
+            ),
+        ],
+
+        // День 6 — Британский музей · Сохо · пабы
+        6: [
+            BookingItem(
+                name: "Экскурсия «Вековые пабы Лондона»", kind: .ticket,
+                note: "18:00–20:00 · старт у Blue Plaque (Christ's Hospital, EC1A 7BA). Бронь заранее.",
+                mapsQuery: "Christ's Hospital Blue Plaque Newgate Street London"
+            ),
+            BookingItem(
+                name: "Blacklock Soho", kind: .restaurant,
+                note: "Стейк-хаус, ужин ~16:30. Стол лучше забронировать.",
+                mapsQuery: "Blacklock Soho London"
+            ),
+        ],
+
+        // День 7 — Camden · Little Venice
+        7: [
+            BookingItem(
+                name: "Coretto by the Canal", kind: .restaurant,
+                note: "Шампань-бранч у канала, ~11:00. Бронь на бранч желательна.",
+                mapsQuery: "Coretto by the Canal London"
+            ),
+        ],
+
+        // День 8 — парки · London Eye
+        8: [
+            BookingItem(
+                name: "London Eye", kind: .ticket,
+                note: "€65–95 за двоих. Закатный слот бронируйте заранее.",
+                officialURLString: "https://www.londoneye.com/tickets-and-prices/", officialLabel: "Купить билет",
+                mapsQuery: "London Eye"
+            ),
+            BookingItem(
+                name: "The Truth, Хаммерсмит", kind: .restaurant,
+                note: "Бранч рядом с отелем, ~11:00.",
+                mapsQuery: "The Truth cafe Hammersmith London"
             ),
         ],
 
