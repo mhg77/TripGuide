@@ -9,7 +9,6 @@ nonisolated enum City: String, CaseIterable {
     case london = "Лондон"
     case paris = "Париж"
     case disneyland = "Диснейленд"
-    case bruges = "Брюгге"
     case beaune = "Бон"
     case annecy = "Анси"
     case chamonix = "Шамони"
@@ -26,7 +25,6 @@ nonisolated enum City: String, CaseIterable {
         case .london: return "NightLondon"
         case .paris: return "NightParis"
         case .disneyland: return "NightDisneyland"
-        case .bruges: return "NightBruges"
         case .beaune: return "NightBeaune"
         case .annecy: return "NightAnnecy"
         case .chamonix: return "NightChamonix"
@@ -99,8 +97,8 @@ struct PlanBlock: Identifiable {
 }
 
 struct TripDay: Identifiable {
-    let id: Int              // 1...23
-    let day: Int              // day of month (5...27), month is always September 2026
+    let id: Int              // 1...22
+    let day: Int              // day of month (5...26), month is always September 2026
     let weekday: String       // "Сб"
     let city: City
     let subtitle: String      // short page title, e.g. "Прилёт · South Bank"

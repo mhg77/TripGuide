@@ -9,8 +9,8 @@ import UIKit
 
 struct TripDataTests {
 
-    @Test func tripHas23SequentialDays() {
-        #expect(TripData.allDays.count == 23)
+    @Test func tripHas22SequentialDays() {
+        #expect(TripData.allDays.count == 22)
         for (index, day) in TripData.allDays.enumerated() {
             #expect(day.id == index + 1, "id дней должны идти подряд с 1")
             #expect(day.day == index + 5, "числа месяца должны идти подряд с 5 сентября")
@@ -19,14 +19,14 @@ struct TripDataTests {
 
     @Test func everyTripDateResolvesToDay() {
         let calendar = Calendar.current
-        for dayOfMonth in 5...27 {
+        for dayOfMonth in 5...26 {
             let date = calendar.date(from: DateComponents(year: 2026, month: 9, day: dayOfMonth))!
             let day = TripData.day(for: date)
             #expect(day?.day == dayOfMonth)
         }
         // За границами окна поездки — nil.
         let before = calendar.date(from: DateComponents(year: 2026, month: 9, day: 4))!
-        let after = calendar.date(from: DateComponents(year: 2026, month: 9, day: 28))!
+        let after = calendar.date(from: DateComponents(year: 2026, month: 9, day: 27))!
         let otherYear = calendar.date(from: DateComponents(year: 2025, month: 9, day: 10))!
         #expect(TripData.day(for: before) == nil)
         #expect(TripData.day(for: after) == nil)
@@ -142,7 +142,7 @@ struct BundledRoutesTests {
         // сходиться с координатами точек. Это ловит рассинхронизацию рукописного
         // TripData.swift и координат в scripts/fetch_routes.py (маршруты качает он).
         // Исключение: вершина Aiguille du Midi — дороги туда нет, линия ведёт к канатке.
-        let noRoadKeys: Set<String> = ["d17-1"]
+        let noRoadKeys: Set<String> = ["d16-1"]
         for day in TripData.allDays {
             for index in 1..<day.pois.count {
                 let key = "d\(day.id)-\(index)"

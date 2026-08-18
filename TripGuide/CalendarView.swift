@@ -95,7 +95,7 @@ struct CalendarView: View {
                 Text("Лондон → Лион")
                     .font(Theme.serifLargeTitle)
                     .foregroundStyle(.white)
-                Text("23 дня · 05–27 сентября 2026")
+                Text("22 дня · 05–26 сентября 2026")
                     .font(.subheadline.weight(.medium))
                     .foregroundStyle(.white.opacity(0.9))
             }

@@ -30,7 +30,6 @@ enum Theme {
         case .london: return Color(red: 0.45, green: 0.60, blue: 0.85)
         case .paris: return Color(red: 0.92, green: 0.55, blue: 0.62)
         case .disneyland: return Color(red: 0.74, green: 0.58, blue: 0.92)
-        case .bruges: return Color(red: 0.85, green: 0.66, blue: 0.36)
         case .beaune: return Color(red: 0.85, green: 0.42, blue: 0.46)
         case .annecy: return Color(red: 0.38, green: 0.80, blue: 0.86)
         case .chamonix: return Color(red: 0.58, green: 0.65, blue: 0.88)

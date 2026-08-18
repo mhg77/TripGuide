@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Экран «Авто» — 9 переездов поездки. Тап открывает навигацию по переезду.
+/// Экран «Авто» — 8 переездов поездки. Тап открывает навигацию по переезду.
 struct WatchCarListView: View {
     var body: some View {
         NavigationStack {

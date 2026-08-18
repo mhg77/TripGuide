@@ -197,30 +197,8 @@ enum BookingData {
             ),
         ],
 
-        // День 13 — Брюгге
+        // День 13 — Бон
         13: [
-            BookingItem(
-                name: "Белфорт (звонница)", kind: .ticket,
-                note: "€15/чел за подъём. Внутри не больше 70 человек одновременно.",
-                officialURLString: "https://www.museabrugge.be/en/tickets", officialLabel: "Купить билет",
-                mapsQuery: "Belfort Bruges"
-            ),
-            BookingItem(
-                name: "Grand Hotel Casselbergh ★★★★", kind: .hotel,
-                note: "€150–280/ночь · 150 м от Markt · подземный паркинг ~€30/сутки",
-                mapsQuery: "Grand Hotel Casselbergh Bruges",
-                bookingComQuery: "Grand Hotel Casselbergh Bruges"
-            ),
-            BookingItem(
-                name: "Hotel Dukes' Palace ★★★★★", kind: .hotel,
-                note: "€250–360/ночь · герцогский дворец XV века",
-                mapsQuery: "Hotel Dukes Palace Bruges",
-                bookingComQuery: "Hotel Dukes Palace Bruges"
-            ),
-        ],
-
-        // День 14 — Бон
-        14: [
             BookingItem(
                 name: "Le Central Boutique-Hôtel ★★★", kind: .hotel,
                 note: "€90–229/ночь · напротив Hospices de Beaune",
@@ -234,8 +212,8 @@ enum BookingData {
             ),
         ],
 
-        // День 15 — Анси
-        15: [
+        // День 14 — Анси
+        14: [
             BookingItem(
                 name: "Splendid Hotel Lac d'Annecy ★★★★", kind: .hotel,
                 note: "€200–320/ночь · ар-деко, канал Vassé",
@@ -250,8 +228,8 @@ enum BookingData {
             ),
         ],
 
-        // День 16 — Шамони
-        16: [
+        // День 15 — Шамони
+        15: [
             BookingItem(
                 name: "Téléphérique de l'Aiguille du Midi", kind: .ticket,
                 note: "€83/чел туда-обратно. Слот бронировать заранее, ранний утренний — приоритет.",
@@ -272,8 +250,8 @@ enum BookingData {
             ),
         ],
 
-        // День 17 — Ледник Мер-де-Глас
-        17: [
+        // День 16 — Ледник Мер-де-Глас
+        16: [
             BookingItem(
                 name: "La Cabane des Praz, Шамони", kind: .restaurant,
                 note: "Небольшой зал — вечером без брони не сесть.",
@@ -281,8 +259,8 @@ enum BookingData {
             ),
         ],
 
-        // День 21 — Перевал · Аоста · термы
-        21: [
+        // День 20 — Перевал · Аоста · термы
+        20: [
             BookingItem(
                 name: "QC Terme — вечерний вход", kind: .ticket,
                 note: "Слот в термы на вечер — бронируйте заранее, вечера загружены.",
@@ -303,8 +281,8 @@ enum BookingData {
             ),
         ],
 
-        // День 22 — Термальный день
-        22: [
+        // День 21 — Термальный день
+        21: [
             BookingItem(
                 name: "QC Terme Pré Saint Didier — день", kind: .ticket,
                 note: "€46–70/чел в зависимости от пакета. Строго по тайм-слоту, выходной день загружен.",

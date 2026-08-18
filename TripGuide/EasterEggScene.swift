@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Скрытая анимация-шутка, которая всплывает поверх ВСЕГО экрана по тройному тапу на
 /// вкладке «План» — косой дождь из фотореалистичного предмета, привязанного к конкретному
-/// дню (у каждого из 23 дней путеводителя свой предмет).
+/// дню (у каждого из 22 дней путеводителя свой предмет).
 ///
 /// Пять тем — логотип Top Gear, Мэри Поппинс, силуэт Микки Мауса, лампа Pixar и олимпийские
 /// кольца — заменены на generic-эквиваленты (секундомер с гоночным флагом, зонт с саквояжем,
@@ -21,17 +21,16 @@ nonisolated enum RainObject: CaseIterable {
     case baguette       // День 10 — Багеты
     case carousel       // День 11 — Микки Маус → карусельная лошадка
     case deskLamp       // День 12 — Лампа Pixar → настольная лампа
-    case belfry         // День 13 — Колокольня в Брюгге
-    case wineBottle     // День 14 — Бутылка вина
-    case annecyPalace   // День 15 — Дворец в Анси
-    case medal          // День 16 — Олимпийские кольца → медаль со снежинкой
-    case glacier        // День 17 — Ледник
-    case snowboard      // День 18 — Сноуборд
-    case skis           // День 19 — Лыжи
-    case snowmobile     // День 20 — Снегоход
-    case bathrobe       // День 21 — Банный халат
-    case venik           // День 22 — Веник для бани
-    case clapper        // День 23 — Кино-хлопушка
+    case wineBottle     // День 13 — Бутылка вина (Бон)
+    case annecyPalace   // День 14 — Дворец в Анси
+    case medal          // День 15 — Олимпийские кольца → медаль со снежинкой
+    case glacier        // День 16 — Ледник
+    case snowboard      // День 17 — Сноуборд
+    case skis           // День 18 — Лыжи
+    case snowmobile     // День 19 — Снегоход
+    case bathrobe       // День 20 — Банный халат
+    case venik           // День 21 — Веник для бани
+    case clapper        // День 22 — Кино-хлопушка
 
     static func forDay(id: Int) -> RainObject? {
         switch id {
@@ -47,17 +46,16 @@ nonisolated enum RainObject: CaseIterable {
         case 10: return .baguette
         case 11: return .carousel
         case 12: return .deskLamp
-        case 13: return .belfry
-        case 14: return .wineBottle
-        case 15: return .annecyPalace
-        case 16: return .medal
-        case 17: return .glacier
-        case 18: return .snowboard
-        case 19: return .skis
-        case 20: return .snowmobile
-        case 21: return .bathrobe
-        case 22: return .venik
-        case 23: return .clapper
+        case 13: return .wineBottle
+        case 14: return .annecyPalace
+        case 15: return .medal
+        case 16: return .glacier
+        case 17: return .snowboard
+        case 18: return .skis
+        case 19: return .snowmobile
+        case 20: return .bathrobe
+        case 21: return .venik
+        case 22: return .clapper
         default: return nil
         }
     }
@@ -77,7 +75,6 @@ nonisolated enum RainObject: CaseIterable {
         case .baguette: return "EggBaguette"
         case .carousel: return "EggCarousel"
         case .deskLamp: return "EggDeskLamp"
-        case .belfry: return "EggBelfry"
         case .wineBottle: return "EggWineBottle"
         case .annecyPalace: return "EggAnnecyPalace"
         case .medal: return "EggMedal"

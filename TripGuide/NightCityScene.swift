@@ -60,9 +60,6 @@ private enum NightArt {
         case .disneyland:
             fireworks(&context, size, t: t, colors: [Theme.gold, Color(red: 0.85, green: 0.4, blue: 0.55), Color(red: 0.45, green: 0.75, blue: 0.85)])
             sparkleField(&context, size, t: t, count: 10, color: .white, minY: 0.05, maxY: 0.4)
-        case .bruges:
-            mist(&context, size, t: t, bandY: size.height * 0.62, color: .white)
-            sparkleField(&context, size, t: t, count: 8, color: Theme.gold, minY: 0.4, maxY: 0.7)
         case .beaune:
             sparkleField(&context, size, t: t, count: 16, color: Theme.gold, minY: 0.55, maxY: 0.9)
         case .annecy:
@@ -170,18 +167,6 @@ private enum NightArt {
                 dot.addEllipse(in: CGRect(x: px - r, y: py - r, width: r * 2, height: r * 2))
                 context.fill(dot, with: .color(color.opacity(Double(fade) * 0.9)))
             }
-        }
-    }
-
-    static func mist(_ context: inout GraphicsContext, _ size: CGSize, t: Double, bandY: CGFloat, color: Color) {
-        for i in 0..<3 {
-            let seed = Double(i)
-            let speed = 8.0 + seed * 4
-            let width = size.width * 0.55
-            let x = (CGFloat((t * speed).truncatingRemainder(dividingBy: Double(size.width + width))) - width)
-            let y = bandY + CGFloat(i) * 10 - 10
-            let band = Path(roundedRect: CGRect(x: x, y: y, width: width, height: 16), cornerRadius: 8)
-            context.fill(band, with: .color(color.opacity(0.10)))
         }
     }
 

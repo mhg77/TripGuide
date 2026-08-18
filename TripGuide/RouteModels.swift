@@ -34,7 +34,7 @@ struct RouteWaypoint: Identifiable {
 struct RouteLeg: Identifiable {
     let id: Int
     let dateLabel: String        // "17.09"
-    let title: String            // "Диснейленд → Брюгге"
+    let title: String            // "Диснейленд → Бон"
     let mode: TransportMode
     let distance: String         // "~307 км"
     let duration: String         // "3 ч 30 мин"
