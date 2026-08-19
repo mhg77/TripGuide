@@ -15,7 +15,7 @@ A SwiftUI travel guide app: 22 days along the route London → Paris → Beaune 
 
 - **22-day calendar** — tap any day to open its plan, map, and bookings
 - **In-day map** — routes between stops along real roads (offline, geometry bundled in the app)
-- **84 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
+- **86 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
 - **Routes tab** — all transfers with a map and an "Open in Google Maps" button (directions from your current location)
 - **Info tab** — documents, money, weather, budget, and backup plans
 - **Bookings & tickets** — all hotels, transport, and attractions with dates
@@ -34,7 +34,7 @@ A SwiftUI travel guide app: 22 days along the route London → Paris → Beaune 
 | Watch | watchOS companion — MapKit, `MKDirections`, `AVSpeechSynthesizer`, haptics |
 | Location | CoreLocation — live user location, background updates on the watch |
 | Offline routes | OSRM (roads), Transitous / GTFS (Eurostar) |
-| Geometry | Google Encoded Polyline (84 routes in `BundledRoutes.swift`) |
+| Geometry | Google Encoded Polyline (86 routes in `BundledRoutes.swift`) |
 | Tests | Swift Testing framework (17 tests) |
 | Language | Swift 5 language mode (Xcode 26 toolchain) |
 
@@ -53,11 +53,11 @@ TripGuide/
 ├── MapTabView.swift         # Day map with route polyline
 ├── MapGeometry.swift        # Shared helper: camera fit, region
 ├── RouteModels.swift        # Transfer and waypoint models
-├── RouteData.swift          # All 7 transfers with waypoints
+├── RouteData.swift          # All 8 transfers with waypoints
 ├── RoutesView.swift         # Transfer list
 ├── RouteDetailView.swift    # Transfer detail map
 ├── TransitRouting.swift     # Transitous API client
-├── BundledRoutes.swift      # 84 offline routes (auto-generated)
+├── BundledRoutes.swift      # 86 offline routes (auto-generated)
 ├── BookingModels.swift      # Booking data models
 ├── BookingData.swift        # Bookings and ticket data
 ├── BookingsTabView.swift    # Bookings screen
@@ -73,12 +73,12 @@ TripGuide Watch App/         # watchOS companion (navigation)
 ├── WatchRootView.swift      # Two tabs: walking / driving routes
 ├── WatchDayListView.swift   # Days that have walking segments
 ├── WatchWalkListView.swift  # Walking segments of a day
-├── WatchCarListView.swift   # The 7 transfers (driving / Eurostar)
+├── WatchCarListView.swift   # The 8 transfers (driving / Eurostar)
 ├── WatchNavigationView.swift# Route screen: map preview, banner prompts, start/stop
 ├── WatchFullMapView.swift   # Full-screen map with "locate me" / "fit route"
 ├── WatchNavigator.swift     # Location + MKDirections turn-by-turn engine
 ├── WatchWalkData.swift      # Walking segments from shared TripData/BundledRoutes
-├── WatchCarData.swift       # The 7 transfers (shared geometry)
+├── WatchCarData.swift       # The 8 transfers (shared geometry)
 ├── WatchNavLeg.swift        # Unified leg model for the nav screen
 ├── WatchPolyline.swift      # Google polyline decoder
 └── WatchFormat.swift        # Distance formatting
@@ -88,7 +88,7 @@ TripGuide Watch App/         # watchOS companion (navigation)
 
 ## Offline Routes
 
-All 84 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
+All 86 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
 
 ```bash
 cd scripts
@@ -103,4 +103,4 @@ The script queries OSRM (driving and walking routes) and Transitous (Eurostar ra
 # In Xcode: Product → Test (⌘U)
 ```
 
-17 tests covering data integrity for all 22 days, offline geometry presence for all 84 routes, and coordinate accuracy.
+17 tests covering data integrity for all 22 days, offline geometry presence for all 86 routes, and coordinate accuracy.

@@ -471,25 +471,28 @@ enum TripData {
         ),
 
         TripDay(
-            id: 19, day: 23, weekday: "Ср", city: .lesArcs, subtitle: "Спокойный день в деревне",
+            id: 19, day: 23, weekday: "Ср", city: .lesArcs, subtitle: "Монблан с итальянской стороны",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Без спешки: завтрак в деревне, неспешная прогулка по пешеходным улочкам Arc 1950. Завтра ранний старт в Италию — сегодня набираемся сил."),
-                PlanBlock(icon: "figure.hiking", label: "День", text: "По желанию — кабинка Cabriolet des Villages наверх, к Arc 2000, и подъёмник Aiguille Rouge (3226 м) за панорамой на Монблан (в сентябре подъёмники работают в ограниченном режиме — уточните расписание). Либо просто спа и бассейн в резиденции."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Chalet de l'Arcelle или терраса в деревне с видом на долину."),
-                PlanBlock(icon: "bag.fill", label: "Сборы", text: "Соберите чемоданы и загрузите машину с вечера: утром 24-го выезжаем рано в аутлет и дальше в Турин."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "La Vache Rouge — пицца и тёплая атмосфера, либо L'Arpette в деревне."),
+                PlanBlock(icon: "car.fill", label: "Переезд", text: "Ле-Зарк ⇄ Курмайёр: ~55 км / 1 ч 20 мин в одну сторону через перевал Col du Petit-Saint-Bernard (2188 м). Радиалка — вечером возвращаемся в деревню."),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Ранний выезд через перевал Пти-Сен-Бернар: серпантин, альпийские озёра, сурки; спуск в итальянскую долину Аосты к Курмайёру."),
+                PlanBlock(icon: "mountain.2.fill", label: "День", text: "Skyway Monte Bianco — вращающиеся стеклянные кабины от Pontal d'Entrèves (1300 м) через станцию Pavillon до Punta Helbronner (3466 м): круговая терраса 360° почти у вершины Монблана, ледник Гигант, вид на Маттерхорн и Гран-Парадизо. На Pavillon — альпийский ботсад и зал кристаллов."),
+                PlanBlock(icon: "ticket.fill", label: "Билет", text: "~€57/чел туда-обратно до Punta Helbronner. Берите онлайн-слот заранее и одевайтесь теплее — наверху около нуля даже летом."),
+                PlanBlock(icon: "fork.knife", label: "Обед", text: "В Курмайёре на Via Roma или на панорамной станции Pavillon."),
+                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Возвращение в Ле-Зарк через перевал — последняя ночь в деревне. С вечера соберите машину: утром 24-го ранний старт в аутлет и Турин."),
                 PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Arc 1950, Le Village (последняя ночь)"),
             ],
             pois: [
-                // Всё в пешей доступности внутри пешеходной деревни Arc 1950.
+                // Радиалка через перевал в Италию: Курмайёр и Skyway, вечером назад в Arc 1950.
                 POI(name: "Arc 1950, Le Village", category: .hotel, latitude: 45.5720, longitude: 6.7930),
-                POI(name: "Cabriolet des Villages", category: .activity, latitude: 45.5735, longitude: 6.7958),
-                POI(name: "La Vache Rouge", category: .food, latitude: 45.5712, longitude: 6.7942),
+                POI(name: "Col du Petit-Saint-Bernard", category: .transfer, latitude: 45.6772, longitude: 6.8917),
+                POI(name: "Skyway Monte Bianco (Entrèves)", category: .activity, latitude: 45.7963, longitude: 6.9645),
+                POI(name: "Курмайёр, центр", category: .sight, latitude: 45.7969, longitude: 6.9686),
             ],
             warning: nil,
-            fact: "Подъёмник Aiguille Rouge поднимает на 3226 м — это высшая доступная точка курорта Ле-Арк, откуда в ясную погоду виден весь массив Монблана и даже Маттерхорн на горизонте.",
-            todayFocus: "Ле-Зарк 1950 — последний спокойный день перед броском в Италию."
+            fact: "Skyway Monte Bianco открылся в 2015 году и сразу стал инженерной сенсацией: кабины медленно вращаются вокруг оси на всём подъёме, так что за одну поездку пассажиры видят панораму на все 360° — от вершины Монблана до итальянских Альп.",
+            todayFocus: "Ле-Зарк 1950 — радиалка к Монблану с итальянской стороны.",
+            easterEggText: "Пасхалка: Punta Helbronner (3466 м) — почти касание крыши Западной Европы. Монблан на 1341 метр выше, но отсюда кажется, что до него рукой подать; на самом деле это территория альпинистов с верёвками и кошками, а не туристов в кроссовках."
         ),
 
         // MARK: - ТУРИН (24–26.09, 2 ночи)

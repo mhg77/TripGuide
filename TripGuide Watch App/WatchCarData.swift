@@ -31,7 +31,7 @@ struct WatchCarLeg: Identifiable {
     }
 }
 
-/// 7 переездов поездки; геометрия линий берётся из общего BundledRoutes.
+/// 8 переездов поездки; геометрия линий берётся из общего BundledRoutes.
 enum WatchCarData {
     static let legs: [WatchCarLeg] = [
         WatchCarLeg(id: 1, dateLabel: "13.09", title: "Лондон → Париж", isTrain: true,
@@ -49,10 +49,13 @@ enum WatchCarData {
         WatchCarLeg(id: 5, dateLabel: "21.09", title: "Шамони → Ле-Зарк 1950", isTrain: false,
                     distance: "~120 км", duration: "2 ч",
                     from: .init(latitude: 45.9237, longitude: 6.8694), to: .init(latitude: 45.5720, longitude: 6.7930)),
-        WatchCarLeg(id: 6, dateLabel: "24.09", title: "Ле-Зарк → Серравалле → Турин", isTrain: false,
+        WatchCarLeg(id: 6, dateLabel: "23.09", title: "Ле-Зарк → Курмайёр (Монблан)", isTrain: false,
+                    distance: "~55 км", duration: "1 ч 20 мин",
+                    from: .init(latitude: 45.5720, longitude: 6.7930), to: .init(latitude: 45.7963, longitude: 6.9645)),
+        WatchCarLeg(id: 7, dateLabel: "24.09", title: "Ле-Зарк → Серравалле → Турин", isTrain: false,
                     distance: "~400 км", duration: "~5 ч + аутлет",
                     from: .init(latitude: 45.5720, longitude: 6.7930), to: .init(latitude: 45.0685, longitude: 7.6830)),
-        WatchCarLeg(id: 7, dateLabel: "26.09", title: "Турин → Лион (аэропорт)", isTrain: false,
+        WatchCarLeg(id: 8, dateLabel: "26.09", title: "Турин → Лион (аэропорт)", isTrain: false,
                     distance: "~305 км", duration: "3 ч 30 мин",
                     from: .init(latitude: 45.0685, longitude: 7.6830), to: .init(latitude: 45.7256, longitude: 5.0811)),
     ]

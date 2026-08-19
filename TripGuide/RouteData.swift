@@ -48,7 +48,18 @@ enum RouteData {
             destinationName: "Arc 1950, Le Village", destLat: 45.5720, destLon: 6.7930
         ),
         RouteLeg(
-            id: 6, dateLabel: "24.09", title: "Ле-Зарк → Серравалле → Турин", mode: .car,
+            id: 6, dateLabel: "23.09", title: "Ле-Зарк → Курмайёр (Монблан, радиалка)", mode: .car,
+            distance: "~55 км в одну сторону", duration: "1 ч 20 мин",
+            roadNote: "Через перевал Col du Petit-Saint-Bernard (2188 м) в итальянскую долину Аосты к Курмайёру и станции Skyway Monte Bianco. Вечером тем же путём назад.",
+            warning: "Проверьте, что перевал Пти-Сен-Бернар открыт, и погоду наверху. При закрытии перевала — через тоннель Мон-Блан со стороны Шамони.",
+            originName: "Arc 1950, Le Village", originLat: 45.5720, originLon: 6.7930,
+            destinationName: "Skyway Monte Bianco (Курмайёр)", destLat: 45.7963, destLon: 6.9645,
+            waypoints: [
+                RouteWaypoint(name: "Col du Petit-Saint-Bernard", lat: 45.6772, lon: 6.8917),
+            ]
+        ),
+        RouteLeg(
+            id: 7, dateLabel: "24.09", title: "Ле-Зарк → Серравалле → Турин", mode: .car,
             distance: "~400 км суммарно", duration: "~5 ч за рулём + аутлет",
             roadNote: "Через перевал Col du Petit-Saint-Bernard и долину Аосты на юг к аутлету Серравалле, затем ~1 ч 10 мин обратно на север в Турин.",
             warning: "Длинный день за рулём. Выезд ранний, погоду на перевале проверьте с вечера. Если перевал закрыт — запасной путь через тоннель Фрежюс из Модана.",
@@ -60,7 +71,7 @@ enum RouteData {
             ]
         ),
         RouteLeg(
-            id: 7, dateLabel: "26.09", title: "Турин → Лион (аэропорт)", mode: .car,
+            id: 8, dateLabel: "26.09", title: "Турин → Лион (аэропорт)", mode: .car,
             distance: "~305 км", duration: "3 ч 30 мин",
             roadNote: "A32 → тоннель Фрежюс (~€48) → долина Морьен → A43 до аэропорта Лион-Сент-Экзюпери.",
             warning: nil,
