@@ -15,7 +15,7 @@ A SwiftUI travel guide app: 22 days along the route London → Paris → Beaune 
 
 - **22-day calendar** — tap any day to open its plan, map, and bookings
 - **In-day map** — routes between stops along real roads (offline, geometry bundled in the app)
-- **85 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
+- **87 offline routes** — walking, driving, and Eurostar through the Channel Tunnel
 - **Routes tab** — all transfers with a map and an "Open in Google Maps" button (directions from your current location)
 - **Info tab** — documents, money, weather, budget, and backup plans
 - **Bookings & tickets** — all hotels, transport, and attractions with dates
@@ -34,7 +34,7 @@ A SwiftUI travel guide app: 22 days along the route London → Paris → Beaune 
 | Watch | watchOS companion — MapKit, `MKDirections`, `AVSpeechSynthesizer`, haptics |
 | Location | CoreLocation — live user location, background updates on the watch |
 | Offline routes | OSRM (roads), Transitous / GTFS (Eurostar) |
-| Geometry | Google Encoded Polyline (85 routes in `BundledRoutes.swift`) |
+| Geometry | Google Encoded Polyline (87 routes in `BundledRoutes.swift`) |
 | Tests | Swift Testing framework (17 tests) |
 | Language | Swift 5 language mode (Xcode 26 toolchain) |
 
@@ -57,7 +57,7 @@ TripGuide/
 ├── RoutesView.swift         # Transfer list
 ├── RouteDetailView.swift    # Transfer detail map
 ├── TransitRouting.swift     # Transitous API client
-├── BundledRoutes.swift      # 85 offline routes (auto-generated)
+├── BundledRoutes.swift      # 87 offline routes (auto-generated)
 ├── BookingModels.swift      # Booking data models
 ├── BookingData.swift        # Bookings and ticket data
 ├── BookingsTabView.swift    # Bookings screen
@@ -88,7 +88,7 @@ TripGuide Watch App/         # watchOS companion (navigation)
 
 ## Offline Routes
 
-All 85 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
+All 87 routes are pre-fetched and bundled in `BundledRoutes.swift` — the app renders real road geometry with no network required. To refresh routes:
 
 ```bash
 cd scripts
@@ -103,4 +103,4 @@ The script queries OSRM (driving and walking routes) and Transitous (Eurostar ra
 # In Xcode: Product → Test (⌘U)
 ```
 
-17 tests covering data integrity for all 22 days, offline geometry presence for all 85 routes, and coordinate accuracy.
+17 tests covering data integrity for all 22 days, offline geometry presence for all 87 routes, and coordinate accuracy.

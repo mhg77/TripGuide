@@ -136,7 +136,7 @@ enum TripData {
             blocks: [
                 PlanBlock(icon: "car.fill", label: "Утро", text: "Завтрак в Берфорде, прогулка по историческому High Street, выезд обратно в Лондон (~135 км / ~2 ч), сдача арендованной машины."),
                 PlanBlock(icon: "sunrise.fill", label: "День", text: "12:00–14:00 · Британский музей (бесплатно). Египет: зал 4 (скульптура) и залы 61–66 (мумии, загробный мир); Месопотамия и Ассирия — залы 6–10."),
-                PlanBlock(icon: "sun.max.fill", label: "Прогулка", text: "14:30 · Сохо, флагман Stone Island на 79 Brewer St."),
+                PlanBlock(icon: "sun.max.fill", label: "Прогулка", text: "14:30 · Сохо и шопинг: флагман Stone Island (79 Brewer St), Supreme (2–3 Peter St) и House of MinaLima (26 Greek St) — галерея-магазин студии, придумавшей всю графику «Гарри Поттера»."),
                 PlanBlock(icon: "fork.knife", label: "Ужин", text: "16:30 · Blacklock Soho — стейк-хаус."),
                 PlanBlock(icon: "wineglass.fill", label: "Вечер", text: "18:00–20:00 · экскурсия «Вековые пабы Лондона» — старт у Blue Plaque (Christ's Hospital, EC1A 7BA)."),
                 PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Хаммерсмит"),
@@ -146,6 +146,8 @@ enum TripData {
                 POI(name: "Британский музей", category: .sight, latitude: 51.5194, longitude: -0.1270),
                 POI(name: "Сохо", category: .sight, latitude: 51.5136, longitude: -0.1367),
                 POI(name: "Stone Island, 79 Brewer St", category: .activity, latitude: 51.5129, longitude: -0.1365),
+                POI(name: "Supreme, 2–3 Peter St", category: .activity, latitude: 51.5124, longitude: -0.1330),
+                POI(name: "House of MinaLima, 26 Greek St", category: .activity, latitude: 51.5138, longitude: -0.1307),
                 POI(name: "Blacklock Soho", category: .food, latitude: 51.5128, longitude: -0.1329),
                 POI(name: "Паб-экскурсия (старт)", category: .activity, latitude: 51.5163, longitude: -0.0990),
             ],
