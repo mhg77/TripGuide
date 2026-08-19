@@ -13,7 +13,7 @@ nonisolated enum City: String, CaseIterable {
     case annecy = "Анси"
     case chamonix = "Шамони"
     case lesArcs = "Ле-Зарк 1950"
-    case preSaintDidier = "Пре-Сен-Дидье"
+    case turin = "Турин"
     case lyon = "Лион"
 
     /// Отображаемое имя города.
@@ -29,7 +29,7 @@ nonisolated enum City: String, CaseIterable {
         case .annecy: return "NightAnnecy"
         case .chamonix: return "NightChamonix"
         case .lesArcs: return "NightLesArcs"
-        case .preSaintDidier: return "NightValleDAoste"
+        case .turin: return "NightTurin"
         case .lyon: return "NightLyon"
         }
     }

@@ -70,9 +70,8 @@ private enum NightArt {
         case .lesArcs:
             snow(&context, size, t: t, count: 42, color: .white)
             sparkleField(&context, size, t: t, count: 12, color: Theme.gold, minY: 0.4, maxY: 0.75)
-        case .preSaintDidier:
-            steam(&context, size, t: t, originX: size.width * 0.35, originY: size.height * 0.74, color: .white)
-            steam(&context, size, t: t, originX: size.width * 0.62, originY: size.height * 0.72, color: .white)
+        case .turin:
+            sparkleField(&context, size, t: t, count: 20, color: Theme.goldLight, minY: 0.4, maxY: 0.85)
         case .lyon:
             sparkleField(&context, size, t: t, count: 16, color: Theme.goldLight, minY: 0.25, maxY: 0.62)
         }
@@ -167,23 +166,6 @@ private enum NightArt {
                 dot.addEllipse(in: CGRect(x: px - r, y: py - r, width: r * 2, height: r * 2))
                 context.fill(dot, with: .color(color.opacity(Double(fade) * 0.9)))
             }
-        }
-    }
-
-    static func steam(_ context: inout GraphicsContext, _ size: CGSize, t: Double, originX: CGFloat, originY: CGFloat, color: Color) {
-        for i in 0..<10 {
-            let seed = Double(i)
-            let speed = 0.10 + frac(sin(seed * 3.1)) * 0.08
-            let phase = frac(sin(seed * 7.7))
-            let life = (t * speed + phase).truncatingRemainder(dividingBy: 1.0)
-            let drift = sin(t * 0.5 + seed) * 8
-            let x = originX + CGFloat(drift) + CGFloat(seed - 5) * 6
-            let y = originY - CGFloat(life) * 70
-            let r: CGFloat = 6 + CGFloat(life) * 10
-            let opacity = (1 - life) * 0.16
-            var puff = Path()
-            puff.addEllipse(in: CGRect(x: x - r, y: y - r, width: r * 2, height: r * 2))
-            context.fill(puff, with: .color(color.opacity(opacity)))
         }
     }
 

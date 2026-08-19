@@ -428,7 +428,7 @@ enum TripData {
         TripDay(
             id: 17, day: 21, weekday: "Пн", city: .lesArcs, subtitle: "Заселение",
             intro: """
-            Главная точка отдыха в горах — пешеходная деревня в стиле савойского шале на высоте 1950 м. Отсюда же — однодневная радиалка в аутлет Серравалле.
+            Главная точка отдыха в горах — пешеходная деревня в стиле савойского шале на высоте 1950 м. Три ночи здесь, а дальше — через аутлет Серравалле в Турин.
 
             Жильё уже забронировано
             Апартаменты в пешеходной деревне Arc 1950, Le Village — собственное жильё, в бюджет поездки не включено.
@@ -471,100 +471,101 @@ enum TripData {
         ),
 
         TripDay(
-            id: 19, day: 23, weekday: "Ср", city: .lesArcs, subtitle: "Радиалка в Серравалле",
+            id: 19, day: 23, weekday: "Ср", city: .lesArcs, subtitle: "Спокойный день в деревне",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "car.fill", label: "Переезд", text: "Ле-Зарк ⇄ Серравалле: ~302 км / 4 ч 20 мин в одну сторону. Выезд не позже 7:00!"),
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Ранний выезд через перевал Пти-Сен-Бернар — дорога сама по себе одна из красивейших поездки: серпантин, долина Аосты, автострада мимо Турина."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "4–5 часов в Designer Outlet Serravalle — один из крупнейших аутлетов Европы (Gucci, Prada, Moncler, Stone Island и 200+ марок). Выезд обратно не позже 16:30."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Фуд-корт аутлета."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "По возвращении, поздно — La Vache Rouge в деревне (пицца, тёплая атмосфера) или что-то простое рядом с домом."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Arc 1950, Le Village"),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Без спешки: завтрак в деревне, неспешная прогулка по пешеходным улочкам Arc 1950. Завтра ранний старт в Италию — сегодня набираемся сил."),
+                PlanBlock(icon: "figure.hiking", label: "День", text: "По желанию — кабинка Cabriolet des Villages наверх, к Arc 2000, и подъёмник Aiguille Rouge (3226 м) за панорамой на Монблан (в сентябре подъёмники работают в ограниченном режиме — уточните расписание). Либо просто спа и бассейн в резиденции."),
+                PlanBlock(icon: "fork.knife", label: "Обед", text: "Chalet de l'Arcelle или терраса в деревне с видом на долину."),
+                PlanBlock(icon: "bag.fill", label: "Сборы", text: "Соберите чемоданы и загрузите машину с вечера: утром 24-го выезжаем рано в аутлет и дальше в Турин."),
+                PlanBlock(icon: "fork.knife", label: "Ужин", text: "La Vache Rouge — пицца и тёплая атмосфера, либо L'Arpette в деревне."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "Arc 1950, Le Village (последняя ночь)"),
             ],
             pois: [
+                // Всё в пешей доступности внутри пешеходной деревни Arc 1950.
+                POI(name: "Arc 1950, Le Village", category: .hotel, latitude: 45.5720, longitude: 6.7930),
+                POI(name: "Cabriolet des Villages", category: .activity, latitude: 45.5735, longitude: 6.7958),
+                POI(name: "La Vache Rouge", category: .food, latitude: 45.5712, longitude: 6.7942),
+            ],
+            warning: nil,
+            fact: "Подъёмник Aiguille Rouge поднимает на 3226 м — это высшая доступная точка курорта Ле-Арк, откуда в ясную погоду виден весь массив Монблана и даже Маттерхорн на горизонте.",
+            todayFocus: "Ле-Зарк 1950 — последний спокойный день перед броском в Италию."
+        ),
+
+        // MARK: - ТУРИН (24–26.09, 2 ночи)
+
+        TripDay(
+            id: 20, day: 24, weekday: "Чт", city: .turin, subtitle: "Аутлет Серравалле → Турин",
+            intro: """
+            Из Альп в первую столицу Италии — с большой шопинг-остановкой по пути. Длинный день за рулём с приятным «привалом» в аутлете.
+
+            Ночлег · 2 ночи, центр Турина
+            NH Collection Torino Piazza Carlina ★★★★ — €160–260/ночь. Историческое палаццо на Piazza Carlina, 10 минут пешком до Моле и Egizio.
+            Turin Palace Hotel ★★★★★ — €220–360/ночь. Классика напротив вокзала Porta Nuova, крытый паркинг рядом — удобно для пикапа.
+            """,
+            blocks: [
+                PlanBlock(icon: "car.fill", label: "Переезд", text: "Ле-Зарк → аутлет Серравалле → Турин: ~400 км суммарно через перевал Пти-Сен-Бернар и долину Аосты. Выезд ранний, не позже 7:30."),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Ранний выезд через перевал Пти-Сен-Бернар — одна из красивейших дорог поездки: серпантин, альпийские озёра, панорама на Монблан. Дальше автострада мимо Турина на юг."),
+                PlanBlock(icon: "bag.fill", label: "День", text: "3–4 часа в Designer Outlet Serravalle — один из крупнейших аутлетов Европы (Gucci, Prada, Moncler, Stone Island и 200+ марок)."),
+                PlanBlock(icon: "fork.knife", label: "Обед", text: "Фуд-корт аутлета."),
+                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "~1 ч 10 мин обратно на север в Турин, заселение в центре. Вечерний аперитиво (изобретён именно здесь) на Piazza Vittorio Veneto."),
+                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Ristorante Consorzio — пьемонтская классика: вителло тоннато, аньолотти дель плин."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "NH Collection Piazza Carlina, Турин"),
+            ],
+            pois: [
+                // Порядок повторяет день: выезд из Arc 1950 через перевал, аутлет, вечером Турин.
                 POI(name: "Arc 1950, Le Village", category: .hotel, latitude: 45.5720, longitude: 6.7930),
                 POI(name: "Col du Petit-Saint-Bernard", category: .transfer, latitude: 45.6772, longitude: 6.8917),
                 POI(name: "Designer Outlet Serravalle", category: .activity, latitude: 44.7647, longitude: 8.8560),
-                POI(name: "La Vache Rouge", category: .food, latitude: 45.5715, longitude: 6.7935),
+                POI(name: "Отель, Турин", category: .hotel, latitude: 45.0685, longitude: 7.6830),
             ],
-            warning: "Реальный расчёт по дорогам: 302 км и ~4 ч 20 мин в одну сторону — то есть около 8 ч 40 мин чистой езды туда-обратно за один день, не считая шопинга. Если с утра нет настроения — замените радиалку вторым горным днём и просто останьтесь в деревне: аутлет — опция, а не обязательство. Погоду на перевале проверьте с вечера.",
-            fact: nil,
+            warning: "Длинный день за рулём: ~5 часов чистой езды плюс шопинг. Меняйтесь за рулём, погоду на перевале Пти-Сен-Бернар проверьте с вечера. Если перевал закрыт — запасной путь в Италию через тоннель Фрежюс (из Модана).",
+            fact: "Турин был первой столицей объединённой Италии (1861–1865) и родиной национального кинематографа: первые итальянские киностудии открылись именно здесь, поэтому Национальный музей кино logично разместили в самой высокой точке города — башне Моле.",
             todayFocus: nil,
-            easterEggText: "Пасхалка: где Prada, Gucci и Moncler — там и «Дьявол носит Prada». Проведите день так, будто вы Миранда Пристли, а не турист: с полным равнодушием к ценникам и лёгким презрением ко всем, кто медленно ходит по проходам."
-        ),
-
-        // MARK: - ВАЛЛЕ-Д'АОСТА (24–25.09, 2 ночи)
-
-        TripDay(
-            id: 20, day: 24, weekday: "Чт", city: .preSaintDidier, subtitle: "Перевал · Аоста · термы",
-            intro: """
-            Из Франции в Италию через альпийский перевал — термы, римская архитектура, вид на Монблан с другой стороны.
-
-            Ночлег · 2 ночи
-            QC Terme Monte Bianco Spa and Resort ★★★★ — €250–390/ночь. Термальный комплекс с видом на Монблан прямо у отеля.
-            Residence Villaggio delle Alpi ★★★ — €90–150/ночь. Апарт-отель, 5 мин до подъёмников Courmayeur, бесплатная парковка — хорошо для пикапа.
-            """,
-            blocks: [
-                PlanBlock(icon: "car.fill", label: "Переезд", text: "Ле-Зарк → Пре-Сен-Дидье: ~57 км / 1 ч 30 мин через Col du Petit-Saint-Bernard (2188 м) — проверьте, что перевал открыт"),
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Выезд через перевал Пти-Сен-Бернар — одна из самых красивых дорог поездки: альпийские озёра, сурки, панорама на Монблан. Остановитесь на смотровой площадке."),
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Заезд в Аосту (~20 минут от Пре-Сен-Дидье) — древнеримский город: арка Августа, криптопортик."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "В Аосте, любая trattoria в центре."),
-                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Заселение в Пре-Сен-Дидье, вечерний заход в термы QC Terme."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Le Vieux Pommier — раклет и гноччи алла фондута."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "QC Terme Monte Bianco, Пре-Сен-Дидье"),
-            ],
-            pois: [
-                // Порядок повторяет день: выезд из Arc 1950 через перевал, Аоста, вечером термы.
-                POI(name: "Arc 1950, Le Village", category: .hotel, latitude: 45.5720, longitude: 6.7930),
-                POI(name: "Col du Petit-Saint-Bernard", category: .transfer, latitude: 45.6772, longitude: 6.8917),
-                POI(name: "Аоста, арка Августа", category: .sight, latitude: 45.7372, longitude: 7.3155),
-                POI(name: "Аоста, криптопортик", category: .sight, latitude: 45.7369, longitude: 7.3145),
-                POI(name: "Отель, Пре-Сен-Дидье", category: .hotel, latitude: 45.7170, longitude: 6.9650),
-                POI(name: "Пре-Сен-Дидье", category: .sight, latitude: 45.7186, longitude: 6.9662),
-                POI(name: "QC Terme", category: .activity, latitude: 45.7180, longitude: 6.9670),
-            ],
-            warning: nil,
-            fact: "Аоста была основана римлянами в 25 году до н.э. как Augusta Praetoria и до сих пор сохраняет практически нетронутую прямоугольную планировку римского военного лагеря — редкость даже для Италии.",
-            todayFocus: nil
+            easterEggText: "Пасхалка: где Prada, Gucci и Moncler — там и «Дьявол носит Prada». Проведите пару часов в аутлете так, будто вы Миранда Пристли, а не турист: с полным равнодушием к ценникам и лёгким презрением ко всем, кто медленно ходит по проходам."
         ),
 
         TripDay(
-            id: 21, day: 25, weekday: "Пт", city: .preSaintDidier, subtitle: "Термальный день",
+            id: 21, day: 25, weekday: "Пт", city: .turin, subtitle: "Прогулка по Турину",
             intro: nil,
             blocks: [
-                PlanBlock(icon: "sun.max.fill", label: "День", text: "Целый день в термальном комплексе QC Terme Pré Saint Didier — открытые бассейны с видом на Монблан, сауны, массаж. Слот лучше бронировать заранее — выходной день обычно загружен."),
-                PlanBlock(icon: "ticket.fill", label: "Билет", text: "€46–70/чел в зависимости от пакета (день/вечер/5 часов). Фаст-трека нет и очередей как таковых тоже нет — вход строго по забронированному тайм-слоту, не по живой очереди."),
-                PlanBlock(icon: "fork.knife", label: "Обед", text: "Можно прямо на территории терм."),
-                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Ristorante Baita Ermitage — вид на Монблан, поленту с колбасками."),
-                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "QC Terme Monte Bianco, Пре-Сен-Дидье"),
+                PlanBlock(icon: "building.columns.fill", label: "Утро", text: "Египетский музей (Museo Egizio) — второе по величине собрание древнеегипетского искусства в мире после Каира. Билеты берите онлайн по тайм-слоту, закладывайте 2–2,5 часа."),
+                PlanBlock(icon: "fork.knife", label: "Кофе", text: "Историческое кафе Al Bicerin или Baratti & Milano — местный биричин (кофе, шоколад и сливки) и туринский джандуйотто."),
+                PlanBlock(icon: "sun.max.fill", label: "День", text: "Piazza San Carlo — «гостиная Турина» с аркадами, затем Piazza Castello и Palazzo Reale с королевской оружейной палатой. По желанию — Королевский дворец и сады."),
+                PlanBlock(icon: "sunset.fill", label: "Вечер", text: "Моле-Антонеллиана — символ города: Национальный музей кино внутри и панорамный лифт со стеклянной кабиной прямо сквозь купол на смотровую (85 м). Отличный закат над Альпами."),
+                PlanBlock(icon: "fork.knife", label: "Ужин", text: "Eataly Lingotto или траттория в квартале Quadrilatero Romano."),
+                PlanBlock(icon: "bed.double.fill", label: "Ночлег", text: "NH Collection Piazza Carlina, Турин"),
             ],
             pois: [
-                POI(name: "Отель, Пре-Сен-Дидье", category: .hotel, latitude: 45.7170, longitude: 6.9650),
-                POI(name: "QC Terme", category: .activity, latitude: 45.7180, longitude: 6.9670),
-                POI(name: "Ristorante Baita Ermitage", category: .food, latitude: 45.7175, longitude: 6.9700),
+                // Компактный пеший маршрут по историческому центру.
+                POI(name: "Отель, Турин", category: .hotel, latitude: 45.0685, longitude: 7.6830),
+                POI(name: "Piazza San Carlo", category: .sight, latitude: 45.0678, longitude: 7.6825),
+                POI(name: "Египетский музей (Museo Egizio)", category: .sight, latitude: 45.0681, longitude: 7.6844),
+                POI(name: "Piazza Castello · Palazzo Reale", category: .sight, latitude: 45.0709, longitude: 7.6858),
+                POI(name: "Моле-Антонеллиана · Музей кино", category: .sight, latitude: 45.0690, longitude: 7.6934),
             ],
             warning: nil,
-            fact: "Термальные источники Пре-Сен-Дидье использовались ещё в античности — древние римляне называли эти места Aquae, и уже тогда ценили именно ту минеральную воду с богатым содержанием сульфатов, на которой работает нынешний комплекс QC Terme.",
-            todayFocus: "Пре-Сен-Дидье — свободный термальный день, без переезда."
+            fact: "Именно в Турине в 1786 году Антонио Бенедетто Карпано изобрёл вермут, а чуть позже здесь же придумали хлебные палочки гриссини — так что аперитиво в туринском кафе это буквально дегустация на его исторической родине.",
+            todayFocus: "Турин — целый день пешком по центру, без переезда."
         ),
 
         // MARK: - ЛИОН (26.09, вылет)
 
         TripDay(
-            id: 22, day: 26, weekday: "Сб", city: .lyon, subtitle: "Пре-Сен-Дидье → Лион · вылет",
+            id: 22, day: 26, weekday: "Сб", city: .lyon, subtitle: "Турин → Лион · вылет",
             intro: """
-            Финальный отрезок — ранний перегон в Лион к утреннему рейсу домой.
+            Финальный отрезок — перегон из Турина обратно во Францию, в аэропорт Лиона к рейсу домой.
 
-            Рейс утром из Лиона
-            Программа города — по минимуму: главное успеть к самолёту. Если рейс не совсем ранний и останется час — можно по пути заглянуть в Vieux Lyon.
+            Рейс из Лиона
+            Программа — по минимуму: главное успеть к самолёту. Ранний выезд из Турина, чтобы с запасом добраться до аэропорта.
             """,
             blocks: [
-                PlanBlock(icon: "car.fill", label: "Переезд", text: "Пре-Сен-Дидье → аэропорт Лион-Сент-Экзюпери: ~254 км / 3 ч 10 мин через тоннель Мон-Блан (~€45) и Шамони."),
-                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Ранний выезд из Пре-Сен-Дидье, сдача арендованной машины в аэропорту."),
-                PlanBlock(icon: "airplane.departure", label: "Вылет", text: "Утренний рейс домой из Лион-Сент-Экзюпери (LYS)."),
+                PlanBlock(icon: "car.fill", label: "Переезд", text: "Турин → аэропорт Лион-Сент-Экзюпери: ~305 км / 3 ч 30 мин через тоннель Фрежюс (~€48) и долину Морьен."),
+                PlanBlock(icon: "sunrise.fill", label: "Утро", text: "Ранний выезд из Турина, сдача арендованной машины в аэропорту."),
+                PlanBlock(icon: "airplane.departure", label: "Вылет", text: "Рейс домой из Лион-Сент-Экзюпери (LYS)."),
             ],
             pois: [
-                POI(name: "Отель, Пре-Сен-Дидье", category: .hotel, latitude: 45.7170, longitude: 6.9650),
+                POI(name: "Отель, Турин", category: .hotel, latitude: 45.0685, longitude: 7.6830),
                 POI(name: "Аэропорт Лион-Сент-Экзюпери (LYS)", category: .transfer, latitude: 45.7256, longitude: 5.0811),
             ],
             warning: nil,

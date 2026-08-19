@@ -48,37 +48,27 @@ enum RouteData {
             destinationName: "Arc 1950, Le Village", destLat: 45.5720, destLon: 6.7930
         ),
         RouteLeg(
-            id: 6, dateLabel: "23.09", title: "Ле-Зарк ⇄ Серравалле (радиалка)", mode: .car,
-            distance: "~302 км", duration: "4 ч 20 мин в одну сторону",
-            roadNote: "Через перевал Col du Petit-Saint-Bernard, долину Аосты и автостраду мимо Турина.",
-            warning: "Около 8 ч 40 мин чистой езды туда-обратно за один день. Выезд не позже 7:00, обратно не позже 16:30. Погоду на перевале проверьте с вечера.",
+            id: 6, dateLabel: "24.09", title: "Ле-Зарк → Серравалле → Турин", mode: .car,
+            distance: "~400 км суммарно", duration: "~5 ч за рулём + аутлет",
+            roadNote: "Через перевал Col du Petit-Saint-Bernard и долину Аосты на юг к аутлету Серравалле, затем ~1 ч 10 мин обратно на север в Турин.",
+            warning: "Длинный день за рулём. Выезд ранний, погоду на перевале проверьте с вечера. Если перевал закрыт — запасной путь через тоннель Фрежюс из Модана.",
             originName: "Arc 1950, Le Village", originLat: 45.5720, originLon: 6.7930,
-            destinationName: "Designer Outlet Serravalle", destLat: 44.7647, destLon: 8.8560,
+            destinationName: "Турин, центр", destLat: 45.0685, destLon: 7.6830,
             waypoints: [
                 RouteWaypoint(name: "Col du Petit-Saint-Bernard", lat: 45.6772, lon: 6.8917),
+                RouteWaypoint(name: "Designer Outlet Serravalle", lat: 44.7647, lon: 8.8560),
             ]
         ),
         RouteLeg(
-            id: 7, dateLabel: "24.09", title: "Ле-Зарк → Пре-Сен-Дидье", mode: .car,
-            distance: "~57 км", duration: "1 ч 30 мин",
-            roadNote: "Через Col du Petit-Saint-Bernard (2188 м) — проверьте, что перевал открыт. Запасной путь при закрытии — тоннель Мон-Блан.",
+            id: 7, dateLabel: "26.09", title: "Турин → Лион (аэропорт)", mode: .car,
+            distance: "~305 км", duration: "3 ч 30 мин",
+            roadNote: "A32 → тоннель Фрежюс (~€48) → долина Морьен → A43 до аэропорта Лион-Сент-Экзюпери.",
             warning: nil,
-            originName: "Arc 1950, Le Village", originLat: 45.5720, originLon: 6.7930,
-            destinationName: "Пре-Сен-Дидье", destLat: 45.7186, destLon: 6.9662,
-            waypoints: [
-                RouteWaypoint(name: "Col du Petit-Saint-Bernard", lat: 45.6772, lon: 6.8917),
-            ]
-        ),
-        RouteLeg(
-            id: 8, dateLabel: "26.09", title: "Пре-Сен-Дидье → Лион (аэропорт)", mode: .car,
-            distance: "~254 км", duration: "3 ч 10 мин",
-            roadNote: "Тоннель Мон-Блан (~€45) через Шамони, дальше A40 → A42 до аэропорта Лион-Сент-Экзюпери.",
-            warning: nil,
-            originName: "Пре-Сен-Дидье", originLat: 45.7186, originLon: 6.9662,
+            originName: "Турин, центр", originLat: 45.0685, originLon: 7.6830,
             destinationName: "Аэропорт Лион-Сент-Экзюпери (LYS)", destLat: 45.7256, destLon: 5.0811,
-            // Через тоннель Мон-Блан — MKDirections иначе может выбрать объездной маршрут.
+            // Через тоннель Фрежюс — иначе MKDirections может увести на объезд.
             waypoints: [
-                RouteWaypoint(name: "Шамони (тоннель Мон-Блан)", lat: 45.9237, lon: 6.8694),
+                RouteWaypoint(name: "Тоннель Фрежюс", lat: 45.1360, lon: 6.7050),
             ]
         ),
     ]

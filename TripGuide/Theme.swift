@@ -34,7 +34,7 @@ enum Theme {
         case .annecy: return Color(red: 0.38, green: 0.80, blue: 0.86)
         case .chamonix: return Color(red: 0.58, green: 0.65, blue: 0.88)
         case .lesArcs: return Color(red: 0.46, green: 0.80, blue: 0.60)
-        case .preSaintDidier: return Color(red: 0.38, green: 0.82, blue: 0.74)
+        case .turin: return Color(red: 0.82, green: 0.52, blue: 0.42)
         case .lyon: return Color(red: 0.90, green: 0.74, blue: 0.38)
         }
     }

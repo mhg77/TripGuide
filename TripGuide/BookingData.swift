@@ -259,40 +259,45 @@ enum BookingData {
             ),
         ],
 
-        // День 20 — Перевал · Аоста · термы
+        // День 20 — Аутлет Серравалле → Турин
         20: [
             BookingItem(
-                name: "QC Terme — вечерний вход", kind: .ticket,
-                note: "Слот в термы на вечер — бронируйте заранее, вечера загружены.",
-                officialURLString: "https://www.qcterme.com/en/pre-saint-didier/qc-terme-pre-saint-didier/prices-opening", officialLabel: "Купить билет",
-                mapsQuery: "QC Terme Pre Saint Didier"
+                name: "NH Collection Torino Piazza Carlina ★★★★", kind: .hotel,
+                note: "€160–260/ночь · историческое палаццо в центре, 10 мин до Моле · 2 ночи",
+                mapsQuery: "NH Collection Torino Piazza Carlina",
+                bookingComQuery: "NH Collection Torino Piazza Carlina"
             ),
             BookingItem(
-                name: "QC Terme Monte Bianco Spa and Resort ★★★★", kind: .hotel,
-                note: "€250–390/ночь · термальный комплекс с видом на Монблан · 2 ночи",
-                mapsQuery: "QC Terme Monte Bianco Spa and Resort",
-                bookingComQuery: "QC Terme Monte Bianco Spa and Resort Pre Saint Didier"
+                name: "Turin Palace Hotel ★★★★★", kind: .hotel,
+                note: "€220–360/ночь · напротив вокзала Porta Nuova, крытый паркинг рядом",
+                mapsQuery: "Turin Palace Hotel",
+                bookingComQuery: "Turin Palace Hotel Torino"
             ),
             BookingItem(
-                name: "Residence Villaggio delle Alpi ★★★", kind: .hotel,
-                note: "€90–150/ночь · апарт-отель, 5 мин до подъёмников Courmayeur",
-                mapsQuery: "Residence Villaggio delle Alpi Courmayeur",
-                bookingComQuery: "Residence Villaggio delle Alpi Courmayeur"
+                name: "Ristorante Consorzio, Турин", kind: .restaurant,
+                note: "Пьемонтская классика, небольшой зал — бронь на ужин обязательна.",
+                mapsQuery: "Ristorante Consorzio Torino"
             ),
         ],
 
-        // День 21 — Термальный день
+        // День 21 — Прогулка по Турину
         21: [
             BookingItem(
-                name: "QC Terme Pré Saint Didier — день", kind: .ticket,
-                note: "€46–70/чел в зависимости от пакета. Строго по тайм-слоту, выходной день загружен.",
-                officialURLString: "https://www.qcterme.com/en/pre-saint-didier/qc-terme-pre-saint-didier/prices-opening", officialLabel: "Купить билет",
-                mapsQuery: "QC Terme Pre Saint Didier"
+                name: "Museo Egizio — билет по слоту", kind: .ticket,
+                note: "€18/чел, второе в мире собрание после Каира. Берите онлайн-слот на утро.",
+                officialURLString: "https://museoegizio.it/en/", officialLabel: "Купить билет",
+                mapsQuery: "Museo Egizio Torino"
             ),
             BookingItem(
-                name: "Ristorante Baita Ermitage", kind: .restaurant,
-                note: "Небольшой зал — бронируйте заранее.",
-                mapsQuery: "Ristorante Baita Ermitage Pre Saint Didier"
+                name: "Mole Antonelliana + Museo del Cinema", kind: .ticket,
+                note: "Музей кино + панорамный лифт ~€19/чел. Билет на лифт лучше заранее.",
+                officialURLString: "https://www.museocinema.it/en", officialLabel: "Купить билет",
+                mapsQuery: "Mole Antonelliana Torino"
+            ),
+            BookingItem(
+                name: "Caffè Al Bicerin, Турин", kind: .restaurant,
+                note: "Историческое кафе с 1763 года — местный биричин. Тесно, приходите пораньше.",
+                mapsQuery: "Caffe Al Bicerin Torino"
             ),
         ],
     ]
