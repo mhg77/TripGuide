@@ -11,7 +11,7 @@ struct RoutesView: View {
                         Text("Автомаршруты")
                             .font(Theme.serifLargeTitle)
                             .foregroundStyle(Theme.ink)
-                        Text("8 переездов · выберите, чтобы посмотреть детали и открыть навигацию")
+                        Text("7 переездов · выберите, чтобы посмотреть детали и открыть навигацию")
                             .font(.subheadline)
                             .foregroundStyle(Theme.inkSecondary)
                     }
